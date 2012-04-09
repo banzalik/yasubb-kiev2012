@@ -1,5 +1,5 @@
 all:: bem-bl
-all:: $(patsubst %.bemjson.js,%.html,$(wildcard pages/*/*.bemjson.js))
+all:: $(patsubst %.bemjson.js,%.html,$(wildcard pages*/*/*.bemjson.js))
 
 BEM=bem
 
@@ -11,16 +11,16 @@ BEM_BUILD=$(BEM) build \
 	-d $< \
 	-t $1 \
 	-o $(@D) \
-	-n $(*F)
+	-n $(*F)	
 
 BEM_CREATE=$(BEM) create block \
-		-l pages \
+		-l $2 \
 		-T $1 \
 		--force \
 		$(*F)
 
 %.html: %.bemhtml.js %.css %.js %.ie.css %.bemhtml.js
-	$(call BEM_CREATE,bem-bl/blocks-common/i-bem/bem/techs/html.js)
+	$(call BEM_CREATE,bem-bl/blocks-common/i-bem/bem/techs/html.js,$(firstword $(subst /, ,$(dir $@))))
 
 .PRECIOUS: %.bemhtml.js
 %.bemhtml.js: %.deps.js
@@ -30,7 +30,7 @@ BEM_CREATE=$(BEM) create block \
 	$(call BEM_BUILD,deps.js)
 
 %.bemdecl.js: %.bemjson.js
-	$(call BEM_CREATE,bemdecl.js)
+	$(call BEM_CREATE,bemdecl.js,$(firstword $(subst /, ,$(dir $@))))
 
 .PRECIOUS: %.ie.css
 %.ie.css: %.deps.js
@@ -55,5 +55,6 @@ DO_GIT=@echo -- git $1 $2; \
 
 bem-bl:
 	$(call DO_GIT,git://github.com/bem/bem-bl.git,$@)
+
 
 .PHONY: all
