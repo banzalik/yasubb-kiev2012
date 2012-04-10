@@ -58,7 +58,7 @@ BEM.DOM.decl('b-gallery', {
                     caption: 'simple',
                     loop: true,
                     data: _this.params.photos,
-                    onShowImg: function(data, auto) {
+                    onSlideStop: function(data, auto) {
                         _this.setMod('image',data.index); // устанавливаем модификатор при смене картинки
                     }
                 });
