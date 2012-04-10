@@ -7,5 +7,8 @@
         { block: 'i-jquery', elem: 'core' },
         { elem: 'js', url: 'index.js' }
     ],
-    content: 'Hello Word'
+    content: {
+        block: 'b-gallery',
+        content: 'Подожидте. Идет загрузка данных...'
+    }
 })
