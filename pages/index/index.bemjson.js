@@ -10,6 +10,7 @@
     content: {
         block: 'b-gallery',
         content: {
+            block: 'b-fotorama',
             elem: 'preloader',
             content: 'Подожидте. Идет загрузка данных...'
         }
