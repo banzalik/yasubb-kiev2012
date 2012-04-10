@@ -1,6 +1,6 @@
 ({
     block: 'b-page',
-    title: 'Yandex.Fotki',
+    title: 'Фото дня на Яндекс.Фотках',
     head: [
         { elem: 'css', url: 'index.css'},
         { elem: 'css', url: 'index.ie.css', ie: 'lt IE 8' },
