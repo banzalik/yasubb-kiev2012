@@ -1,0 +1,10 @@
+block b-social {
+    tag: 'div',
+    content: [{
+        elem: 'like',
+        content: 'like'
+    },{
+        elem: 'js',
+        content: 'js'
+    }]
+}

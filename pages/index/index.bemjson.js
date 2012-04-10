@@ -7,12 +7,14 @@
         { block: 'i-jquery', elem: 'core' },
         { elem: 'js', url: 'index.js' }
     ],
-    content: {
+    content: [{
         block: 'b-gallery',
         content: {
             block: 'b-fotorama',
             elem: 'preloader',
             content: 'Подожидте. Идет загрузка данных...'
         }
-    }
+    },{
+        block: 'b-social'
+    }]
 })
