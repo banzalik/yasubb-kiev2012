@@ -7,6 +7,7 @@ BEM_BUILD=$(BEM) build \
 	-l bem-bl/blocks-common/ \
 	-l bem-bl/blocks-desktop/ \
 	-l blocks/ \
+	-l blocks-$2/ \
 	-l $(@D)/blocks/ \
 	-d $< \
 	-t $1 \
@@ -24,25 +25,26 @@ BEM_CREATE=$(BEM) create block \
 
 .PRECIOUS: %.bemhtml.js
 %.bemhtml.js: %.deps.js
-	$(call BEM_BUILD,bem-bl/blocks-common/i-bem/bem/techs/bemhtml.js)
+	$(call BEM_BUILD,bem-bl/blocks-common/i-bem/bem/techs/bemhtml.js,$(word 2,$(subst -, ,$(firstword $(firstword $(subst /, ,$(dir $@)))))))
 
 %.deps.js: %.bemdecl.js
-	$(call BEM_BUILD,deps.js)
+	$(call BEM_BUILD,deps.js,$(word 2,$(subst -, ,$(firstword $(firstword $(subst /, ,$(dir $@)))))))
 
 %.bemdecl.js: %.bemjson.js
 	$(call BEM_CREATE,bemdecl.js,$(firstword $(subst /, ,$(dir $@))))
 
 .PRECIOUS: %.ie.css
 %.ie.css: %.deps.js
-	$(call BEM_BUILD,ie.css)
+	$(call BEM_BUILD,ie.css,$(word 2,$(subst -, ,$(firstword $(firstword $(subst /, ,$(dir $@)))))))
 
 .PRECIOUS: %.css
 %.css: %.deps.js
-	$(call BEM_BUILD,css)
+	$(call BEM_BUILD,css,$(word 2,$(subst -, ,$(firstword $(firstword $(subst /, ,$(dir $@)))))))
+
 
 .PRECIOUS: %.js
 %.js: %.deps.js
-	$(call BEM_BUILD,js)
+	$(call BEM_BUILD,js,$(word 2,$(subst -, ,$(firstword $(firstword $(subst /, ,$(dir $@)))))))
 
 
 DO_GIT=@echo -- git $1 $2; \
