@@ -9,6 +9,9 @@
     ],
     content: {
         block: 'b-gallery',
-        content: 'Подожидте. Идет загрузка данных...'
+        content: {
+            elem: 'preloader',
+            content: 'Подожидте. Идет загрузка данных...'
+        }
     }
 })
