@@ -9,6 +9,7 @@
     ],
     content: {
         block: 'b-gallery',
+        js: true,
         content: 'Подожидте. Идет загрузка данных...'
     }
 })
