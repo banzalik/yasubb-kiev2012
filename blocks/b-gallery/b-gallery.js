@@ -3,18 +3,23 @@ BEM.DOM.decl('b-gallery', {
     onSetMod : {
 
         js : function() {
+            // инициализация блока, аналог $(document).ready()
+
+            var countPhotos = this.params.size,   // сколько фоток загружать, не больше 100
+                rss = this.params.rss, // откуда брать поток
+                gWidth = this.params.gWidth, // ширина галереи
+                gHeight = this.params.gHeight, // высота галереи
+                html = '<div class="fotorama" data-width="'+gWidth+'" data-height="'+gHeight+'">';
 
             // инициализация  media rss
             $.xmlns["media"] = "http://search.yahoo.com/mrss";
 
-            var html = '<div class="fotorama" data-width="800" data-height="520">';
-
             // загрука и парсинг данных
-            $.get("/rss/rss.xml", function(data) {
+            $.get(rss, function(data) {
 
                 $(data).find('item').each(function(index){
 
-                    if (index < 30) {
+                    if (index < countPhotos) {
 
                         var raw = $(this).find("media|thumbnail").attr('url'),
                             title = $(this).find('title').text();
@@ -31,9 +36,10 @@ BEM.DOM.decl('b-gallery', {
                 html += '</div>';
 
                 $('.b-gallery').html(html);
+
                 $('.fotorama').fotorama({
-                    width: 800,
-                    height: 520
+                    width: gWidth,
+                    height: gHeight
                 });
 
             }, "xml");

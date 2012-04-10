@@ -2,60 +2,9 @@ var BEMHTML = (function(exports) {
     var __r8, __r10, __r12, __r14, __r16, __r18, __r20, __r22, __r24, __r26;
     exports.apply = apply;
     function apply() {
-        return $55.call(this);
+        return $67.call(this);
     }
     function $2() {
-        return "link";
-        return;
-    }
-    function $3() {
-        return false;
-        return;
-    }
-    function $4() {
-        this["_buf"].push("<!DOCTYPE html>");
-        "";
-        var __r37 = this["_mode"];
-        this["_mode"] = "";
-        var __r38 = this["ctx"];
-        this["ctx"] = {
-            tag: "html",
-            cls: "i-ua_js_no i-ua_css_standard",
-            content: [ {
-                elem: "head",
-                content: [ {
-                    tag: "meta",
-                    attrs: {
-                        charset: "utf-8"
-                    }
-                }, {
-                    tag: "meta",
-                    attrs: {
-                        "http-equiv": "X-UA-Compatible",
-                        content: "IE=EmulateIE7, IE=edge"
-                    }
-                }, {
-                    tag: "title",
-                    content: this["ctx"]["title"]
-                }, this["ctx"]["favicon"] ? {
-                    elem: "favicon",
-                    url: this["ctx"]["favicon"]
-                } : "", this["ctx"]["meta"], {
-                    block: "i-ua"
-                }, this["ctx"]["head"] ]
-            }, {
-                elem: "body",
-                mix: [ this["ctx"] ],
-                content: [ this["ctx"]["content"] ]
-            } ]
-        };
-        this.apply();
-        this["_mode"] = __r37;
-        this["ctx"] = __r38;
-        "";
-        return;
-    }
-    function $5() {
         var BEM = {}, toString = Object["prototype"]["toString"], SHORT_TAGS = {
             area: 1,
             base: 1,
@@ -243,15 +192,26 @@ var BEMHTML = (function(exports) {
         return ctx["_buf"].join("");
         return;
     }
-    function $6() {
+    function $3() {
+        return undefined;
+        return;
+    }
+    function $4() {
+        if (!!this["_start"] === false) {
+            return $2.call(this);
+        } else {
+            return $3.call(this);
+        }
+    }
+    function $5() {
         var _this = this, BEM = _this["BEM"], v = this["ctx"], buf = this["_buf"], tag;
-        tag = ("", __r8 = this["_mode"], this["_mode"] = "tag", __r9 = $55.call(this), this["_mode"] = __r8, "", __r9);
+        tag = ("", __r8 = this["_mode"], this["_mode"] = "tag", __r9 = $67.call(this), this["_mode"] = __r8, "", __r9);
         typeof tag != "undefined" || (tag = v["tag"]);
         typeof tag != "undefined" || (tag = "div");
         if (tag) {
             var jsParams, js;
             if (this["block"] && v["js"] !== false) {
-                js = ("", __r12 = this["_mode"], this["_mode"] = "js", __r13 = $55.call(this), this["_mode"] = __r12, "", __r13);
+                js = ("", __r12 = this["_mode"], this["_mode"] = "js", __r13 = $67.call(this), this["_mode"] = __r12, "", __r13);
                 js = js ? this["_"].extend(v["js"], js === true ? {} : js) : v["js"] === true ? {} : v["js"];
                 js && ((jsParams = {})[BEM["INTERNAL"].buildClass(this["block"], v["elem"])] = js);
             } else {
@@ -259,16 +219,16 @@ var BEMHTML = (function(exports) {
             }
             undefined;
             buf.push("<", tag);
-            var isBEM = ("", __r14 = this["_mode"], this["_mode"] = "bem", __r15 = $55.call(this), this["_mode"] = __r14, "", __r15);
+            var isBEM = ("", __r14 = this["_mode"], this["_mode"] = "bem", __r15 = $67.call(this), this["_mode"] = __r14, "", __r15);
             typeof isBEM != "undefined" || (isBEM = typeof v["bem"] != "undefined" ? v["bem"] : v["block"] || v["elem"]);
-            var cls = ("", __r16 = this["_mode"], this["_mode"] = "cls", __r17 = $55.call(this), this["_mode"] = __r16, "", __r17);
+            var cls = ("", __r16 = this["_mode"], this["_mode"] = "cls", __r17 = $67.call(this), this["_mode"] = __r16, "", __r17);
             cls || (cls = v["cls"]);
             var addJSInitClass = v["block"] && jsParams;
             if (isBEM || cls) {
                 buf.push(' class="');
                 if (isBEM) {
                     BEM["INTERNAL"].buildClasses(this["block"], v["elem"], v["elemMods"] || v["mods"], buf);
-                    var mix = ("", __r18 = this["_mode"], this["_mode"] = "mix", __r19 = $55.call(this), this["_mode"] = __r18, "", __r19);
+                    var mix = ("", __r18 = this["_mode"], this["_mode"] = "mix", __r19 = $67.call(this), this["_mode"] = __r18, "", __r19);
                     v["mix"] && (mix = mix ? mix.concat(v["mix"]) : v["mix"]);
                     if (mix) {
                         var i = 0, l = mix["length"], mixItem, hasItem, block;
@@ -299,13 +259,13 @@ var BEMHTML = (function(exports) {
             }
             undefined;
             if (jsParams) {
-                var jsAttr = ("", __r22 = this["_mode"], this["_mode"] = "jsAttr", __r23 = $55.call(this), this["_mode"] = __r22, "", __r23);
+                var jsAttr = ("", __r22 = this["_mode"], this["_mode"] = "jsAttr", __r23 = $67.call(this), this["_mode"] = __r22, "", __r23);
                 buf.push(" ", jsAttr || "onclick", '="return ', this["_"].attrEscape(JSON.stringify(jsParams)), '"');
             } else {
                 undefined;
             }
             undefined;
-            var attrs = ("", __r24 = this["_mode"], this["_mode"] = "attrs", __r25 = $55.call(this), this["_mode"] = __r24, "", __r25);
+            var attrs = ("", __r24 = this["_mode"], this["_mode"] = "attrs", __r25 = $67.call(this), this["_mode"] = __r24, "", __r25);
             attrs = this["_"].extend(attrs, v["attrs"]);
             if (attrs) {
                 var name;
@@ -322,7 +282,7 @@ var BEMHTML = (function(exports) {
             buf.push("/>");
         } else {
             tag && buf.push(">");
-            var content = ("", __r26 = this["_mode"], this["_mode"] = "content", __r27 = $55.call(this), this["_mode"] = __r26, "", __r27);
+            var content = ("", __r26 = this["_mode"], this["_mode"] = "content", __r27 = $67.call(this), this["_mode"] = __r26, "", __r27);
             if (content || content === 0) {
                 var isBEM = this["block"] || this["elem"];
                 {
@@ -337,7 +297,7 @@ var BEMHTML = (function(exports) {
                     this["ctx"] = content;
                     var __r32 = this["_mode"];
                     this["_mode"] = "";
-                    $55.call(this);
+                    $67.call(this);
                     this["_notNewList"] = __r28;
                     this["position"] = __r29;
                     this["_listLength"] = __r30;
@@ -356,47 +316,25 @@ var BEMHTML = (function(exports) {
         }
         return;
     }
-    function $7() {
+    function $6() {
         if (!!this["_start"] === false) {
+            return $2.call(this);
+        } else {
             return $5.call(this);
-        } else {
-            return $6.call(this);
         }
     }
-    function $8() {
-        if (!!this["elem"] === false) {
-            return $4.call(this);
-        } else {
-            if (!!this["_start"] === false) {
-                return $5.call(this);
-            } else {
-                return $6.call(this);
-            }
-        }
-    }
-    function $9() {
+    function $7() {
         return this["ctx"]["content"];
         return;
     }
-    function $10() {
+    function $8() {
         if (!!this["_start"] === false) {
-            return $5.call(this);
+            return $2.call(this);
         } else {
-            return $9.call(this);
+            return $7.call(this);
         }
     }
-    function $11() {
-        return undefined;
-        return;
-    }
-    function $12() {
-        if (!!this["_start"] === false) {
-            return $5.call(this);
-        } else {
-            return $11.call(this);
-        }
-    }
-    function $22() {
+    function $18() {
         var __this = this;
         if (!!this["_mode"] === false) {
             if (!this["_"].isSimple(this["ctx"]) === false) {
@@ -449,7 +387,7 @@ var BEMHTML = (function(exports) {
                             var __r5 = this["elemMods"];
                             this["elemMods"] = this["ctx"]["elemMods"] || {};
                             this["block"] || this["elem"] ? this["position"] = (this["position"] || 0) + 1 : this["_listLength"]--;
-                            $55.call(this);
+                            $67.call(this);
                             undefined;
                             undefined;
                             this["_mode"] = __r0;
@@ -471,87 +409,118 @@ var BEMHTML = (function(exports) {
             return $e.call(this, []);
         }
     }
-    function $23() {
+    function $19() {
         if (!!this["_start"] === false) {
-            return $5.call(this);
+            return $2.call(this);
         } else {
-            return $22.call(this);
+            return $18.call(this);
         }
     }
+    function $21() {
+        return {
+            rel: "shortcut icon",
+            href: this["ctx"]["url"]
+        };
+        return;
+    }
+    function $22() {
+        return "link";
+        return;
+    }
+    function $23() {
+        return false;
+        return;
+    }
+    function $24() {
+        this["_buf"].push("<!DOCTYPE html>");
+        "";
+        var __r37 = this["_mode"];
+        this["_mode"] = "";
+        var __r38 = this["ctx"];
+        this["ctx"] = {
+            tag: "html",
+            cls: "i-ua_js_no i-ua_css_standard",
+            content: [ {
+                elem: "head",
+                content: [ {
+                    tag: "meta",
+                    attrs: {
+                        charset: "utf-8"
+                    }
+                }, {
+                    tag: "meta",
+                    attrs: {
+                        "http-equiv": "X-UA-Compatible",
+                        content: "IE=EmulateIE7, IE=edge"
+                    }
+                }, {
+                    tag: "title",
+                    content: this["ctx"]["title"]
+                }, this["ctx"]["favicon"] ? {
+                    elem: "favicon",
+                    url: this["ctx"]["favicon"]
+                } : "", this["ctx"]["meta"], {
+                    block: "i-ua"
+                }, this["ctx"]["head"] ]
+            }, {
+                elem: "body",
+                mix: [ this["ctx"] ],
+                content: [ this["ctx"]["content"] ]
+            } ]
+        };
+        this.apply();
+        this["_mode"] = __r37;
+        this["ctx"] = __r38;
+        "";
+        return;
+    }
     function $27() {
+        if (!this["ctx"]["url"] === false) {
+            return {
+                src: this["ctx"]["url"]
+            };
+            return;
+        } else {
+            if (!!this["_start"] === false) {
+                return $2.call(this);
+            } else {
+                return undefined;
+                return;
+            }
+        }
+    }
+    function $28() {
         return "script";
         return;
     }
-    function $32() {
+    function $30() {
+        return {
+            rel: "stylesheet",
+            href: this["ctx"]["url"]
+        };
+        return;
+    }
+    function $31() {
+        var hideRule = !this["ctx"]["ie"] ? [ "gt IE 7", "<!-->", "<!--" ] : [ this["ctx"]["ie"], "", "" ];
+        "";
+        var __r39 = this["_mode"];
+        this["_mode"] = "";
+        var __r40 = this["ctx"], __r41 = __r40["_ieCommented"];
+        __r40["_ieCommented"] = true;
+        var __r42 = this["ctx"];
+        this["ctx"] = [ "<!--[if " + hideRule[0] + "]>", hideRule[1], this["ctx"], hideRule[2], "<![endif]-->" ];
+        this.apply();
+        this["_mode"] = __r39;
+        __r40["_ieCommented"] = __r41;
+        this["ctx"] = __r42;
+        "";
+        return;
+    }
+    function $33() {
         if (!this["ctx"].hasOwnProperty("ie") === false) {
             if (!!this["ctx"]["_ieCommented"] === false) {
-                var hideRule = !this["ctx"]["ie"] ? [ "gt IE 7", "<!-->", "<!--" ] : [ this["ctx"]["ie"], "", "" ];
-                "";
-                var __r39 = this["_mode"];
-                this["_mode"] = "";
-                var __r40 = this["ctx"], __r41 = __r40["_ieCommented"];
-                __r40["_ieCommented"] = true;
-                var __r42 = this["ctx"];
-                this["ctx"] = [ "<!--[if " + hideRule[0] + "]>", hideRule[1], this["ctx"], hideRule[2], "<![endif]-->" ];
-                this.apply();
-                this["_mode"] = __r39;
-                __r40["_ieCommented"] = __r41;
-                this["ctx"] = __r42;
-                "";
-                return;
+                return $31.call(this);
             } else {
-                if (!!this["elem"] === false) {
-                    this["_buf"].push("<!DOCTYPE html>");
-                    "";
-                    var __r37 = this["_mode"];
-                    this["_mode"] = "";
-                    var __r38 = this["ctx"];
-                    this["ctx"] = {
-                        tag: "html",
-                        cls: "i-ua_js_no i-ua_css_standard",
-                        content: [ {
-                            elem: "head",
-                            content: [ {
-                                tag: "meta",
-                                attrs: {
-                                    charset: "utf-8"
-                                }
-                            }, {
-                                tag: "meta",
-                                attrs: {
-                                    "http-equiv": "X-UA-Compatible",
-                                    content: "IE=EmulateIE7, IE=edge"
-                                }
-                            }, {
-                                tag: "title",
-                                content: this["ctx"]["title"]
-                            }, this["ctx"]["favicon"] ? {
-                                elem: "favicon",
-                                url: this["ctx"]["favicon"]
-                            } : "", this["ctx"]["meta"], {
-                                block: "i-ua"
-                            }, this["ctx"]["head"] ]
-                        }, {
-                            elem: "body",
-                            mix: [ this["ctx"] ],
-                            content: [ this["ctx"]["content"] ]
-                        } ]
-                    };
-                    this.apply();
-                    this["_mode"] = __r37;
-                    this["ctx"] = __r38;
-                    "";
-                    return;
-                } else {
-                    if (!!this["_start"] === false) {
-                        return $5.call(this);
-                    } else {
-                        return $6.call(this);
-                    }
-                }
-            }
-        } else {
-            if (!!this["elem"] === false) {
                 this["_buf"].push("<!DOCTYPE html>");
                 "";
                 var __r37 = this["_mode"];
@@ -593,22 +562,261 @@ var BEMHTML = (function(exports) {
                 this["ctx"] = __r38;
                 "";
                 return;
+            }
+        } else {
+            this["_buf"].push("<!DOCTYPE html>");
+            "";
+            var __r37 = this["_mode"];
+            this["_mode"] = "";
+            var __r38 = this["ctx"];
+            this["ctx"] = {
+                tag: "html",
+                cls: "i-ua_js_no i-ua_css_standard",
+                content: [ {
+                    elem: "head",
+                    content: [ {
+                        tag: "meta",
+                        attrs: {
+                            charset: "utf-8"
+                        }
+                    }, {
+                        tag: "meta",
+                        attrs: {
+                            "http-equiv": "X-UA-Compatible",
+                            content: "IE=EmulateIE7, IE=edge"
+                        }
+                    }, {
+                        tag: "title",
+                        content: this["ctx"]["title"]
+                    }, this["ctx"]["favicon"] ? {
+                        elem: "favicon",
+                        url: this["ctx"]["favicon"]
+                    } : "", this["ctx"]["meta"], {
+                        block: "i-ua"
+                    }, this["ctx"]["head"] ]
+                }, {
+                    elem: "body",
+                    mix: [ this["ctx"] ],
+                    content: [ this["ctx"]["content"] ]
+                } ]
+            };
+            this.apply();
+            this["_mode"] = __r37;
+            this["ctx"] = __r38;
+            "";
+            return;
+        }
+    }
+    function $35() {
+        return "style";
+        return;
+    }
+    function $38() {
+        return this["ctx"]["attrs"];
+        return;
+    }
+    function $39() {
+        return "meta";
+        return;
+    }
+    function $41() {
+        return "body";
+        return;
+    }
+    function $43() {
+        return "head";
+        return;
+    }
+    function $45() {
+        var __this = this;
+        var __t = this["_mode"];
+        if (__t === "js") {
+            if (!!this["_start"] === false) {
+                return $2.call(this);
             } else {
-                if (!!this["_start"] === false) {
-                    return $5.call(this);
+                return undefined;
+                return;
+            }
+        } else if (__t === "attrs") {
+            if (!!this["_start"] === false) {
+                return $2.call(this);
+            } else {
+                return undefined;
+                return;
+            }
+        } else if (__t === "tag") {
+            if (!!this["_start"] === false) {
+                return $2.call(this);
+            } else {
+                return undefined;
+                return;
+            }
+        } else if (__t === "bem") {
+            if (!!this["_start"] === false) {
+                return $2.call(this);
+            } else {
+                return undefined;
+                return;
+            }
+        } else if (__t === "default") {
+            this["_buf"].push("<!DOCTYPE html>");
+            "";
+            var __r37 = this["_mode"];
+            this["_mode"] = "";
+            var __r38 = this["ctx"];
+            this["ctx"] = {
+                tag: "html",
+                cls: "i-ua_js_no i-ua_css_standard",
+                content: [ {
+                    elem: "head",
+                    content: [ {
+                        tag: "meta",
+                        attrs: {
+                            charset: "utf-8"
+                        }
+                    }, {
+                        tag: "meta",
+                        attrs: {
+                            "http-equiv": "X-UA-Compatible",
+                            content: "IE=EmulateIE7, IE=edge"
+                        }
+                    }, {
+                        tag: "title",
+                        content: this["ctx"]["title"]
+                    }, this["ctx"]["favicon"] ? {
+                        elem: "favicon",
+                        url: this["ctx"]["favicon"]
+                    } : "", this["ctx"]["meta"], {
+                        block: "i-ua"
+                    }, this["ctx"]["head"] ]
+                }, {
+                    elem: "body",
+                    mix: [ this["ctx"] ],
+                    content: [ this["ctx"]["content"] ]
+                } ]
+            };
+            this.apply();
+            this["_mode"] = __r37;
+            this["ctx"] = __r38;
+            "";
+            return;
+        } else if (__t === "content") {
+            if (!!this["_start"] === false) {
+                return $2.call(this);
+            } else {
+                return this["ctx"]["content"];
+                return;
+            }
+        } else if (__t === "mix") {
+            if (!!this["_start"] === false) {
+                return $2.call(this);
+            } else {
+                return undefined;
+                return;
+            }
+        } else if (__t === "jsAttr") {
+            if (!!this["_start"] === false) {
+                return $2.call(this);
+            } else {
+                return undefined;
+                return;
+            }
+        } else if (__t === "cls") {
+            if (!!this["_start"] === false) {
+                return $2.call(this);
+            } else {
+                return undefined;
+                return;
+            }
+        } else {
+            if (!!this["_start"] === false) {
+                return $2.call(this);
+            } else {
+                if (!!this["_mode"] === false) {
+                    if (!this["_"].isSimple(this["ctx"]) === false) {
+                        this["_listLength"]--;
+                        this["_buf"].push(this["ctx"]);
+                        return;
+                    } else {
+                        if (!!this["ctx"] === false) {
+                            this["_listLength"]--;
+                            return;
+                        } else {
+                            if (!this["_"].isArray(this["ctx"]) === false) {
+                                var v = this["ctx"], l = v["length"], i = 0, prevPos = this["position"], prevNotNewList = this["_notNewList"];
+                                if (prevNotNewList) {
+                                    this["_listLength"] += l - 1;
+                                } else {
+                                    this["position"] = 0;
+                                    this["_listLength"] = l;
+                                }
+                                this["_notNewList"] = true;
+                                while (i < l) {
+                                    {
+                                        "";
+                                        var __r7 = this["ctx"];
+                                        this["ctx"] = v[i++];
+                                        apply.call(__this);
+                                        this["ctx"] = __r7;
+                                        "";
+                                    }
+                                    undefined;
+                                }
+                                undefined;
+                                prevNotNewList || (this["position"] = prevPos);
+                                return;
+                            } else {
+                                if (!true === false) {
+                                    var vBlock = this["ctx"]["block"], vElem = this["ctx"]["elem"], block = this["_currBlock"] || this["block"];
+                                    this["ctx"] || (this["ctx"] = {});
+                                    "";
+                                    var __r0 = this["_mode"];
+                                    this["_mode"] = "default";
+                                    var __r1 = this["block"];
+                                    this["block"] = vBlock || (vElem ? block : undefined);
+                                    var __r2 = this["_currBlock"];
+                                    this["_currBlock"] = vBlock || vElem ? undefined : block;
+                                    var __r3 = this["elem"];
+                                    this["elem"] = this["ctx"]["elem"];
+                                    var __r4 = this["mods"];
+                                    this["mods"] = (vBlock ? this["ctx"]["mods"] : this["mods"]) || {};
+                                    var __r5 = this["elemMods"];
+                                    this["elemMods"] = this["ctx"]["elemMods"] || {};
+                                    this["block"] || this["elem"] ? this["position"] = (this["position"] || 0) + 1 : this["_listLength"]--;
+                                    $67.call(this);
+                                    undefined;
+                                    undefined;
+                                    this["_mode"] = __r0;
+                                    this["block"] = __r1;
+                                    this["_currBlock"] = __r2;
+                                    this["elem"] = __r3;
+                                    this["mods"] = __r4;
+                                    this["elemMods"] = __r5;
+                                    "";
+                                    undefined;
+                                    return;
+                                } else {
+                                    return $e.call(this, []);
+                                }
+                            }
+                        }
+                    }
                 } else {
-                    return $6.call(this);
+                    return $e.call(this, []);
                 }
             }
         }
     }
-    function $46() {
+    function $48() {
         var __this = this;
         if (!!this["_start"] === false) {
-            return $5.call(this);
+            return $2.call(this);
         } else {
             var __t = this["_mode"];
-            if (__t === "attrs") {
+            if (__t === "js") {
+                return undefined;
+                return;
+            } else if (__t === "attrs") {
                 return undefined;
                 return;
             } else if (__t === "tag") {
@@ -618,7 +826,7 @@ var BEMHTML = (function(exports) {
                 return undefined;
                 return;
             } else if (__t === "default") {
-                return $6.call(this);
+                return $5.call(this);
             } else if (__t === "content") {
                 return this["ctx"]["content"];
                 return;
@@ -626,9 +834,6 @@ var BEMHTML = (function(exports) {
                 return undefined;
                 return;
             } else if (__t === "jsAttr") {
-                return undefined;
-                return;
-            } else if (__t === "js") {
                 return undefined;
                 return;
             } else if (__t === "cls") {
@@ -686,7 +891,7 @@ var BEMHTML = (function(exports) {
                                     var __r5 = this["elemMods"];
                                     this["elemMods"] = this["ctx"]["elemMods"] || {};
                                     this["block"] || this["elem"] ? this["position"] = (this["position"] || 0) + 1 : this["_listLength"]--;
-                                    $55.call(this);
+                                    $67.call(this);
                                     undefined;
                                     undefined;
                                     this["_mode"] = __r0;
@@ -710,111 +915,40 @@ var BEMHTML = (function(exports) {
             }
         }
     }
-    function $47() {
+    function $51() {
         var __this = this;
-        if (!!this["elem"] === false) {
-            var __t = this["_mode"];
-            if (__t === "attrs") {
-                if (!!this["_start"] === false) {
-                    return $5.call(this);
-                } else {
+        var __t = this["elem"];
+        if (__t === "favicon") {
+            if (!!this["_start"] === false) {
+                return $2.call(this);
+            } else {
+                var __t = this["_mode"];
+                if (__t === "js") {
                     return undefined;
                     return;
-                }
-            } else if (__t === "tag") {
-                if (!!this["_start"] === false) {
-                    return $5.call(this);
-                } else {
+                } else if (__t === "attrs") {
                     return undefined;
                     return;
-                }
-            } else if (__t === "bem") {
-                if (!!this["_start"] === false) {
-                    return $5.call(this);
-                } else {
+                } else if (__t === "tag") {
                     return undefined;
                     return;
-                }
-            } else if (__t === "default") {
-                this["_buf"].push("<!DOCTYPE html>");
-                "";
-                var __r37 = this["_mode"];
-                this["_mode"] = "";
-                var __r38 = this["ctx"];
-                this["ctx"] = {
-                    tag: "html",
-                    cls: "i-ua_js_no i-ua_css_standard",
-                    content: [ {
-                        elem: "head",
-                        content: [ {
-                            tag: "meta",
-                            attrs: {
-                                charset: "utf-8"
-                            }
-                        }, {
-                            tag: "meta",
-                            attrs: {
-                                "http-equiv": "X-UA-Compatible",
-                                content: "IE=EmulateIE7, IE=edge"
-                            }
-                        }, {
-                            tag: "title",
-                            content: this["ctx"]["title"]
-                        }, this["ctx"]["favicon"] ? {
-                            elem: "favicon",
-                            url: this["ctx"]["favicon"]
-                        } : "", this["ctx"]["meta"], {
-                            block: "i-ua"
-                        }, this["ctx"]["head"] ]
-                    }, {
-                        elem: "body",
-                        mix: [ this["ctx"] ],
-                        content: [ this["ctx"]["content"] ]
-                    } ]
-                };
-                this.apply();
-                this["_mode"] = __r37;
-                this["ctx"] = __r38;
-                "";
-                return;
-            } else if (__t === "content") {
-                if (!!this["_start"] === false) {
+                } else if (__t === "bem") {
+                    return undefined;
+                    return;
+                } else if (__t === "default") {
                     return $5.call(this);
-                } else {
+                } else if (__t === "content") {
                     return this["ctx"]["content"];
                     return;
-                }
-            } else if (__t === "mix") {
-                if (!!this["_start"] === false) {
-                    return $5.call(this);
-                } else {
+                } else if (__t === "mix") {
                     return undefined;
                     return;
-                }
-            } else if (__t === "jsAttr") {
-                if (!!this["_start"] === false) {
-                    return $5.call(this);
-                } else {
+                } else if (__t === "jsAttr") {
                     return undefined;
                     return;
-                }
-            } else if (__t === "js") {
-                if (!!this["_start"] === false) {
-                    return $5.call(this);
-                } else {
+                } else if (__t === "cls") {
                     return undefined;
                     return;
-                }
-            } else if (__t === "cls") {
-                if (!!this["_start"] === false) {
-                    return $5.call(this);
-                } else {
-                    return undefined;
-                    return;
-                }
-            } else {
-                if (!!this["_start"] === false) {
-                    return $5.call(this);
                 } else {
                     if (!!this["_mode"] === false) {
                         if (!this["_"].isSimple(this["ctx"]) === false) {
@@ -867,7 +1001,688 @@ var BEMHTML = (function(exports) {
                                         var __r5 = this["elemMods"];
                                         this["elemMods"] = this["ctx"]["elemMods"] || {};
                                         this["block"] || this["elem"] ? this["position"] = (this["position"] || 0) + 1 : this["_listLength"]--;
-                                        $55.call(this);
+                                        $67.call(this);
+                                        undefined;
+                                        undefined;
+                                        this["_mode"] = __r0;
+                                        this["block"] = __r1;
+                                        this["_currBlock"] = __r2;
+                                        this["elem"] = __r3;
+                                        this["mods"] = __r4;
+                                        this["elemMods"] = __r5;
+                                        "";
+                                        undefined;
+                                        return;
+                                    } else {
+                                        return $e.call(this, []);
+                                    }
+                                }
+                            }
+                        }
+                    } else {
+                        return $e.call(this, []);
+                    }
+                }
+            }
+        } else if (__t === "js") {
+            if (!!this["_start"] === false) {
+                return $2.call(this);
+            } else {
+                var __t = this["_mode"];
+                if (__t === "js") {
+                    return undefined;
+                    return;
+                } else if (__t === "attrs") {
+                    return undefined;
+                    return;
+                } else if (__t === "tag") {
+                    return undefined;
+                    return;
+                } else if (__t === "bem") {
+                    return undefined;
+                    return;
+                } else if (__t === "default") {
+                    return $5.call(this);
+                } else if (__t === "content") {
+                    return this["ctx"]["content"];
+                    return;
+                } else if (__t === "mix") {
+                    return undefined;
+                    return;
+                } else if (__t === "jsAttr") {
+                    return undefined;
+                    return;
+                } else if (__t === "cls") {
+                    return undefined;
+                    return;
+                } else {
+                    if (!!this["_mode"] === false) {
+                        if (!this["_"].isSimple(this["ctx"]) === false) {
+                            this["_listLength"]--;
+                            this["_buf"].push(this["ctx"]);
+                            return;
+                        } else {
+                            if (!!this["ctx"] === false) {
+                                this["_listLength"]--;
+                                return;
+                            } else {
+                                if (!this["_"].isArray(this["ctx"]) === false) {
+                                    var v = this["ctx"], l = v["length"], i = 0, prevPos = this["position"], prevNotNewList = this["_notNewList"];
+                                    if (prevNotNewList) {
+                                        this["_listLength"] += l - 1;
+                                    } else {
+                                        this["position"] = 0;
+                                        this["_listLength"] = l;
+                                    }
+                                    this["_notNewList"] = true;
+                                    while (i < l) {
+                                        {
+                                            "";
+                                            var __r7 = this["ctx"];
+                                            this["ctx"] = v[i++];
+                                            apply.call(__this);
+                                            this["ctx"] = __r7;
+                                            "";
+                                        }
+                                        undefined;
+                                    }
+                                    undefined;
+                                    prevNotNewList || (this["position"] = prevPos);
+                                    return;
+                                } else {
+                                    if (!true === false) {
+                                        var vBlock = this["ctx"]["block"], vElem = this["ctx"]["elem"], block = this["_currBlock"] || this["block"];
+                                        this["ctx"] || (this["ctx"] = {});
+                                        "";
+                                        var __r0 = this["_mode"];
+                                        this["_mode"] = "default";
+                                        var __r1 = this["block"];
+                                        this["block"] = vBlock || (vElem ? block : undefined);
+                                        var __r2 = this["_currBlock"];
+                                        this["_currBlock"] = vBlock || vElem ? undefined : block;
+                                        var __r3 = this["elem"];
+                                        this["elem"] = this["ctx"]["elem"];
+                                        var __r4 = this["mods"];
+                                        this["mods"] = (vBlock ? this["ctx"]["mods"] : this["mods"]) || {};
+                                        var __r5 = this["elemMods"];
+                                        this["elemMods"] = this["ctx"]["elemMods"] || {};
+                                        this["block"] || this["elem"] ? this["position"] = (this["position"] || 0) + 1 : this["_listLength"]--;
+                                        $67.call(this);
+                                        undefined;
+                                        undefined;
+                                        this["_mode"] = __r0;
+                                        this["block"] = __r1;
+                                        this["_currBlock"] = __r2;
+                                        this["elem"] = __r3;
+                                        this["mods"] = __r4;
+                                        this["elemMods"] = __r5;
+                                        "";
+                                        undefined;
+                                        return;
+                                    } else {
+                                        return $e.call(this, []);
+                                    }
+                                }
+                            }
+                        }
+                    } else {
+                        return $e.call(this, []);
+                    }
+                }
+            }
+        } else if (__t === "css") {
+            if (!!this["_start"] === false) {
+                return $2.call(this);
+            } else {
+                var __t = this["_mode"];
+                if (__t === "js") {
+                    return undefined;
+                    return;
+                } else if (__t === "attrs") {
+                    return undefined;
+                    return;
+                } else if (__t === "tag") {
+                    return undefined;
+                    return;
+                } else if (__t === "bem") {
+                    return undefined;
+                    return;
+                } else if (__t === "default") {
+                    return $5.call(this);
+                } else if (__t === "content") {
+                    return this["ctx"]["content"];
+                    return;
+                } else if (__t === "mix") {
+                    return undefined;
+                    return;
+                } else if (__t === "jsAttr") {
+                    return undefined;
+                    return;
+                } else if (__t === "cls") {
+                    return undefined;
+                    return;
+                } else {
+                    if (!!this["_mode"] === false) {
+                        if (!this["_"].isSimple(this["ctx"]) === false) {
+                            this["_listLength"]--;
+                            this["_buf"].push(this["ctx"]);
+                            return;
+                        } else {
+                            if (!!this["ctx"] === false) {
+                                this["_listLength"]--;
+                                return;
+                            } else {
+                                if (!this["_"].isArray(this["ctx"]) === false) {
+                                    var v = this["ctx"], l = v["length"], i = 0, prevPos = this["position"], prevNotNewList = this["_notNewList"];
+                                    if (prevNotNewList) {
+                                        this["_listLength"] += l - 1;
+                                    } else {
+                                        this["position"] = 0;
+                                        this["_listLength"] = l;
+                                    }
+                                    this["_notNewList"] = true;
+                                    while (i < l) {
+                                        {
+                                            "";
+                                            var __r7 = this["ctx"];
+                                            this["ctx"] = v[i++];
+                                            apply.call(__this);
+                                            this["ctx"] = __r7;
+                                            "";
+                                        }
+                                        undefined;
+                                    }
+                                    undefined;
+                                    prevNotNewList || (this["position"] = prevPos);
+                                    return;
+                                } else {
+                                    if (!true === false) {
+                                        var vBlock = this["ctx"]["block"], vElem = this["ctx"]["elem"], block = this["_currBlock"] || this["block"];
+                                        this["ctx"] || (this["ctx"] = {});
+                                        "";
+                                        var __r0 = this["_mode"];
+                                        this["_mode"] = "default";
+                                        var __r1 = this["block"];
+                                        this["block"] = vBlock || (vElem ? block : undefined);
+                                        var __r2 = this["_currBlock"];
+                                        this["_currBlock"] = vBlock || vElem ? undefined : block;
+                                        var __r3 = this["elem"];
+                                        this["elem"] = this["ctx"]["elem"];
+                                        var __r4 = this["mods"];
+                                        this["mods"] = (vBlock ? this["ctx"]["mods"] : this["mods"]) || {};
+                                        var __r5 = this["elemMods"];
+                                        this["elemMods"] = this["ctx"]["elemMods"] || {};
+                                        this["block"] || this["elem"] ? this["position"] = (this["position"] || 0) + 1 : this["_listLength"]--;
+                                        $67.call(this);
+                                        undefined;
+                                        undefined;
+                                        this["_mode"] = __r0;
+                                        this["block"] = __r1;
+                                        this["_currBlock"] = __r2;
+                                        this["elem"] = __r3;
+                                        this["mods"] = __r4;
+                                        this["elemMods"] = __r5;
+                                        "";
+                                        undefined;
+                                        return;
+                                    } else {
+                                        return $e.call(this, []);
+                                    }
+                                }
+                            }
+                        }
+                    } else {
+                        return $e.call(this, []);
+                    }
+                }
+            }
+        } else if (__t === "meta") {
+            if (!!this["_start"] === false) {
+                return $2.call(this);
+            } else {
+                var __t = this["_mode"];
+                if (__t === "js") {
+                    return undefined;
+                    return;
+                } else if (__t === "attrs") {
+                    return undefined;
+                    return;
+                } else if (__t === "tag") {
+                    return undefined;
+                    return;
+                } else if (__t === "bem") {
+                    return undefined;
+                    return;
+                } else if (__t === "default") {
+                    return $5.call(this);
+                } else if (__t === "content") {
+                    return this["ctx"]["content"];
+                    return;
+                } else if (__t === "mix") {
+                    return undefined;
+                    return;
+                } else if (__t === "jsAttr") {
+                    return undefined;
+                    return;
+                } else if (__t === "cls") {
+                    return undefined;
+                    return;
+                } else {
+                    if (!!this["_mode"] === false) {
+                        if (!this["_"].isSimple(this["ctx"]) === false) {
+                            this["_listLength"]--;
+                            this["_buf"].push(this["ctx"]);
+                            return;
+                        } else {
+                            if (!!this["ctx"] === false) {
+                                this["_listLength"]--;
+                                return;
+                            } else {
+                                if (!this["_"].isArray(this["ctx"]) === false) {
+                                    var v = this["ctx"], l = v["length"], i = 0, prevPos = this["position"], prevNotNewList = this["_notNewList"];
+                                    if (prevNotNewList) {
+                                        this["_listLength"] += l - 1;
+                                    } else {
+                                        this["position"] = 0;
+                                        this["_listLength"] = l;
+                                    }
+                                    this["_notNewList"] = true;
+                                    while (i < l) {
+                                        {
+                                            "";
+                                            var __r7 = this["ctx"];
+                                            this["ctx"] = v[i++];
+                                            apply.call(__this);
+                                            this["ctx"] = __r7;
+                                            "";
+                                        }
+                                        undefined;
+                                    }
+                                    undefined;
+                                    prevNotNewList || (this["position"] = prevPos);
+                                    return;
+                                } else {
+                                    if (!true === false) {
+                                        var vBlock = this["ctx"]["block"], vElem = this["ctx"]["elem"], block = this["_currBlock"] || this["block"];
+                                        this["ctx"] || (this["ctx"] = {});
+                                        "";
+                                        var __r0 = this["_mode"];
+                                        this["_mode"] = "default";
+                                        var __r1 = this["block"];
+                                        this["block"] = vBlock || (vElem ? block : undefined);
+                                        var __r2 = this["_currBlock"];
+                                        this["_currBlock"] = vBlock || vElem ? undefined : block;
+                                        var __r3 = this["elem"];
+                                        this["elem"] = this["ctx"]["elem"];
+                                        var __r4 = this["mods"];
+                                        this["mods"] = (vBlock ? this["ctx"]["mods"] : this["mods"]) || {};
+                                        var __r5 = this["elemMods"];
+                                        this["elemMods"] = this["ctx"]["elemMods"] || {};
+                                        this["block"] || this["elem"] ? this["position"] = (this["position"] || 0) + 1 : this["_listLength"]--;
+                                        $67.call(this);
+                                        undefined;
+                                        undefined;
+                                        this["_mode"] = __r0;
+                                        this["block"] = __r1;
+                                        this["_currBlock"] = __r2;
+                                        this["elem"] = __r3;
+                                        this["mods"] = __r4;
+                                        this["elemMods"] = __r5;
+                                        "";
+                                        undefined;
+                                        return;
+                                    } else {
+                                        return $e.call(this, []);
+                                    }
+                                }
+                            }
+                        }
+                    } else {
+                        return $e.call(this, []);
+                    }
+                }
+            }
+        } else if (__t === "body") {
+            if (!!this["_start"] === false) {
+                return $2.call(this);
+            } else {
+                var __t = this["_mode"];
+                if (__t === "js") {
+                    return undefined;
+                    return;
+                } else if (__t === "attrs") {
+                    return undefined;
+                    return;
+                } else if (__t === "tag") {
+                    return undefined;
+                    return;
+                } else if (__t === "bem") {
+                    return undefined;
+                    return;
+                } else if (__t === "default") {
+                    return $5.call(this);
+                } else if (__t === "content") {
+                    return this["ctx"]["content"];
+                    return;
+                } else if (__t === "mix") {
+                    return undefined;
+                    return;
+                } else if (__t === "jsAttr") {
+                    return undefined;
+                    return;
+                } else if (__t === "cls") {
+                    return undefined;
+                    return;
+                } else {
+                    if (!!this["_mode"] === false) {
+                        if (!this["_"].isSimple(this["ctx"]) === false) {
+                            this["_listLength"]--;
+                            this["_buf"].push(this["ctx"]);
+                            return;
+                        } else {
+                            if (!!this["ctx"] === false) {
+                                this["_listLength"]--;
+                                return;
+                            } else {
+                                if (!this["_"].isArray(this["ctx"]) === false) {
+                                    var v = this["ctx"], l = v["length"], i = 0, prevPos = this["position"], prevNotNewList = this["_notNewList"];
+                                    if (prevNotNewList) {
+                                        this["_listLength"] += l - 1;
+                                    } else {
+                                        this["position"] = 0;
+                                        this["_listLength"] = l;
+                                    }
+                                    this["_notNewList"] = true;
+                                    while (i < l) {
+                                        {
+                                            "";
+                                            var __r7 = this["ctx"];
+                                            this["ctx"] = v[i++];
+                                            apply.call(__this);
+                                            this["ctx"] = __r7;
+                                            "";
+                                        }
+                                        undefined;
+                                    }
+                                    undefined;
+                                    prevNotNewList || (this["position"] = prevPos);
+                                    return;
+                                } else {
+                                    if (!true === false) {
+                                        var vBlock = this["ctx"]["block"], vElem = this["ctx"]["elem"], block = this["_currBlock"] || this["block"];
+                                        this["ctx"] || (this["ctx"] = {});
+                                        "";
+                                        var __r0 = this["_mode"];
+                                        this["_mode"] = "default";
+                                        var __r1 = this["block"];
+                                        this["block"] = vBlock || (vElem ? block : undefined);
+                                        var __r2 = this["_currBlock"];
+                                        this["_currBlock"] = vBlock || vElem ? undefined : block;
+                                        var __r3 = this["elem"];
+                                        this["elem"] = this["ctx"]["elem"];
+                                        var __r4 = this["mods"];
+                                        this["mods"] = (vBlock ? this["ctx"]["mods"] : this["mods"]) || {};
+                                        var __r5 = this["elemMods"];
+                                        this["elemMods"] = this["ctx"]["elemMods"] || {};
+                                        this["block"] || this["elem"] ? this["position"] = (this["position"] || 0) + 1 : this["_listLength"]--;
+                                        $67.call(this);
+                                        undefined;
+                                        undefined;
+                                        this["_mode"] = __r0;
+                                        this["block"] = __r1;
+                                        this["_currBlock"] = __r2;
+                                        this["elem"] = __r3;
+                                        this["mods"] = __r4;
+                                        this["elemMods"] = __r5;
+                                        "";
+                                        undefined;
+                                        return;
+                                    } else {
+                                        return $e.call(this, []);
+                                    }
+                                }
+                            }
+                        }
+                    } else {
+                        return $e.call(this, []);
+                    }
+                }
+            }
+        } else if (__t === "head") {
+            if (!!this["_start"] === false) {
+                return $2.call(this);
+            } else {
+                var __t = this["_mode"];
+                if (__t === "js") {
+                    return undefined;
+                    return;
+                } else if (__t === "attrs") {
+                    return undefined;
+                    return;
+                } else if (__t === "tag") {
+                    return undefined;
+                    return;
+                } else if (__t === "bem") {
+                    return undefined;
+                    return;
+                } else if (__t === "default") {
+                    return $5.call(this);
+                } else if (__t === "content") {
+                    return this["ctx"]["content"];
+                    return;
+                } else if (__t === "mix") {
+                    return undefined;
+                    return;
+                } else if (__t === "jsAttr") {
+                    return undefined;
+                    return;
+                } else if (__t === "cls") {
+                    return undefined;
+                    return;
+                } else {
+                    if (!!this["_mode"] === false) {
+                        if (!this["_"].isSimple(this["ctx"]) === false) {
+                            this["_listLength"]--;
+                            this["_buf"].push(this["ctx"]);
+                            return;
+                        } else {
+                            if (!!this["ctx"] === false) {
+                                this["_listLength"]--;
+                                return;
+                            } else {
+                                if (!this["_"].isArray(this["ctx"]) === false) {
+                                    var v = this["ctx"], l = v["length"], i = 0, prevPos = this["position"], prevNotNewList = this["_notNewList"];
+                                    if (prevNotNewList) {
+                                        this["_listLength"] += l - 1;
+                                    } else {
+                                        this["position"] = 0;
+                                        this["_listLength"] = l;
+                                    }
+                                    this["_notNewList"] = true;
+                                    while (i < l) {
+                                        {
+                                            "";
+                                            var __r7 = this["ctx"];
+                                            this["ctx"] = v[i++];
+                                            apply.call(__this);
+                                            this["ctx"] = __r7;
+                                            "";
+                                        }
+                                        undefined;
+                                    }
+                                    undefined;
+                                    prevNotNewList || (this["position"] = prevPos);
+                                    return;
+                                } else {
+                                    if (!true === false) {
+                                        var vBlock = this["ctx"]["block"], vElem = this["ctx"]["elem"], block = this["_currBlock"] || this["block"];
+                                        this["ctx"] || (this["ctx"] = {});
+                                        "";
+                                        var __r0 = this["_mode"];
+                                        this["_mode"] = "default";
+                                        var __r1 = this["block"];
+                                        this["block"] = vBlock || (vElem ? block : undefined);
+                                        var __r2 = this["_currBlock"];
+                                        this["_currBlock"] = vBlock || vElem ? undefined : block;
+                                        var __r3 = this["elem"];
+                                        this["elem"] = this["ctx"]["elem"];
+                                        var __r4 = this["mods"];
+                                        this["mods"] = (vBlock ? this["ctx"]["mods"] : this["mods"]) || {};
+                                        var __r5 = this["elemMods"];
+                                        this["elemMods"] = this["ctx"]["elemMods"] || {};
+                                        this["block"] || this["elem"] ? this["position"] = (this["position"] || 0) + 1 : this["_listLength"]--;
+                                        $67.call(this);
+                                        undefined;
+                                        undefined;
+                                        this["_mode"] = __r0;
+                                        this["block"] = __r1;
+                                        this["_currBlock"] = __r2;
+                                        this["elem"] = __r3;
+                                        this["mods"] = __r4;
+                                        this["elemMods"] = __r5;
+                                        "";
+                                        undefined;
+                                        return;
+                                    } else {
+                                        return $e.call(this, []);
+                                    }
+                                }
+                            }
+                        }
+                    } else {
+                        return $e.call(this, []);
+                    }
+                }
+            }
+        } else if (__t === "core") {
+            var __t = this["_mode"];
+            if (__t === "js") {
+                if (!!this["_start"] === false) {
+                    return $2.call(this);
+                } else {
+                    return undefined;
+                    return;
+                }
+            } else if (__t === "attrs") {
+                if (!!this["_start"] === false) {
+                    return $2.call(this);
+                } else {
+                    return undefined;
+                    return;
+                }
+            } else if (__t === "tag") {
+                if (!!this["_start"] === false) {
+                    return $2.call(this);
+                } else {
+                    return undefined;
+                    return;
+                }
+            } else if (__t === "bem") {
+                if (!!this["_start"] === false) {
+                    return $2.call(this);
+                } else {
+                    return undefined;
+                    return;
+                }
+            } else if (__t === "default") {
+                "";
+                var __r35 = this["_mode"];
+                this["_mode"] = "";
+                var __r36 = this["ctx"];
+                this["ctx"] = {
+                    block: "b-page",
+                    elem: "js",
+                    url: "//yandex.st/jquery/1.7.2/jquery.min.js"
+                };
+                this.apply();
+                this["_mode"] = __r35;
+                this["ctx"] = __r36;
+                "";
+                return;
+            } else if (__t === "content") {
+                if (!!this["_start"] === false) {
+                    return $2.call(this);
+                } else {
+                    return this["ctx"]["content"];
+                    return;
+                }
+            } else if (__t === "mix") {
+                if (!!this["_start"] === false) {
+                    return $2.call(this);
+                } else {
+                    return undefined;
+                    return;
+                }
+            } else if (__t === "jsAttr") {
+                if (!!this["_start"] === false) {
+                    return $2.call(this);
+                } else {
+                    return undefined;
+                    return;
+                }
+            } else if (__t === "cls") {
+                if (!!this["_start"] === false) {
+                    return $2.call(this);
+                } else {
+                    return undefined;
+                    return;
+                }
+            } else {
+                if (!!this["_start"] === false) {
+                    return $2.call(this);
+                } else {
+                    if (!!this["_mode"] === false) {
+                        if (!this["_"].isSimple(this["ctx"]) === false) {
+                            this["_listLength"]--;
+                            this["_buf"].push(this["ctx"]);
+                            return;
+                        } else {
+                            if (!!this["ctx"] === false) {
+                                this["_listLength"]--;
+                                return;
+                            } else {
+                                if (!this["_"].isArray(this["ctx"]) === false) {
+                                    var v = this["ctx"], l = v["length"], i = 0, prevPos = this["position"], prevNotNewList = this["_notNewList"];
+                                    if (prevNotNewList) {
+                                        this["_listLength"] += l - 1;
+                                    } else {
+                                        this["position"] = 0;
+                                        this["_listLength"] = l;
+                                    }
+                                    this["_notNewList"] = true;
+                                    while (i < l) {
+                                        {
+                                            "";
+                                            var __r7 = this["ctx"];
+                                            this["ctx"] = v[i++];
+                                            apply.call(__this);
+                                            this["ctx"] = __r7;
+                                            "";
+                                        }
+                                        undefined;
+                                    }
+                                    undefined;
+                                    prevNotNewList || (this["position"] = prevPos);
+                                    return;
+                                } else {
+                                    if (!true === false) {
+                                        var vBlock = this["ctx"]["block"], vElem = this["ctx"]["elem"], block = this["_currBlock"] || this["block"];
+                                        this["ctx"] || (this["ctx"] = {});
+                                        "";
+                                        var __r0 = this["_mode"];
+                                        this["_mode"] = "default";
+                                        var __r1 = this["block"];
+                                        this["block"] = vBlock || (vElem ? block : undefined);
+                                        var __r2 = this["_currBlock"];
+                                        this["_currBlock"] = vBlock || vElem ? undefined : block;
+                                        var __r3 = this["elem"];
+                                        this["elem"] = this["ctx"]["elem"];
+                                        var __r4 = this["mods"];
+                                        this["mods"] = (vBlock ? this["ctx"]["mods"] : this["mods"]) || {};
+                                        var __r5 = this["elemMods"];
+                                        this["elemMods"] = this["ctx"]["elemMods"] || {};
+                                        this["block"] || this["elem"] ? this["position"] = (this["position"] || 0) + 1 : this["_listLength"]--;
+                                        $67.call(this);
                                         undefined;
                                         undefined;
                                         this["_mode"] = __r0;
@@ -892,10 +1707,13 @@ var BEMHTML = (function(exports) {
             }
         } else {
             if (!!this["_start"] === false) {
-                return $5.call(this);
+                return $2.call(this);
             } else {
                 var __t = this["_mode"];
-                if (__t === "attrs") {
+                if (__t === "js") {
+                    return undefined;
+                    return;
+                } else if (__t === "attrs") {
                     return undefined;
                     return;
                 } else if (__t === "tag") {
@@ -905,7 +1723,7 @@ var BEMHTML = (function(exports) {
                     return undefined;
                     return;
                 } else if (__t === "default") {
-                    return $6.call(this);
+                    return $5.call(this);
                 } else if (__t === "content") {
                     return this["ctx"]["content"];
                     return;
@@ -913,9 +1731,6 @@ var BEMHTML = (function(exports) {
                     return undefined;
                     return;
                 } else if (__t === "jsAttr") {
-                    return undefined;
-                    return;
-                } else if (__t === "js") {
                     return undefined;
                     return;
                 } else if (__t === "cls") {
@@ -973,7 +1788,7 @@ var BEMHTML = (function(exports) {
                                         var __r5 = this["elemMods"];
                                         this["elemMods"] = this["ctx"]["elemMods"] || {};
                                         this["block"] || this["elem"] ? this["position"] = (this["position"] || 0) + 1 : this["_listLength"]--;
-                                        $55.call(this);
+                                        $67.call(this);
                                         undefined;
                                         undefined;
                                         this["_mode"] = __r0;
@@ -998,281 +1813,450 @@ var BEMHTML = (function(exports) {
             }
         }
     }
-    function $55() {
-        var __t = this["block"];
-        if (__t === "b-page") {
-            var __t = this["elem"];
-            if (__t === "favicon") {
-                var __t = this["_mode"];
-                if (__t === "attrs") {
-                    return {
-                        rel: "shortcut icon",
-                        href: this["ctx"]["url"]
-                    };
-                    return;
-                } else if (__t === "tag") {
+    function $58() {
+        if (!this["ctx"].hasOwnProperty("ie") === false) {
+            if (!!this["ctx"]["_ieCommented"] === false) {
+                var hideRule = !this["ctx"]["ie"] ? [ "gt IE 7", "<!-->", "<!--" ] : [ this["ctx"]["ie"], "", "" ];
+                "";
+                var __r39 = this["_mode"];
+                this["_mode"] = "";
+                var __r40 = this["ctx"], __r41 = __r40["_ieCommented"];
+                __r40["_ieCommented"] = true;
+                var __r42 = this["ctx"];
+                this["ctx"] = [ "<!--[if " + hideRule[0] + "]>", hideRule[1], this["ctx"], hideRule[2], "<![endif]-->" ];
+                this.apply();
+                this["_mode"] = __r39;
+                __r40["_ieCommented"] = __r41;
+                this["ctx"] = __r42;
+                "";
+                return;
+            } else {
+                if (!!this["_start"] === false) {
                     return $2.call(this);
-                } else if (__t === "bem") {
-                    return $3.call(this);
-                } else if (__t === "default") {
-                    return $8.call(this);
-                } else if (__t === "content") {
-                    return $10.call(this);
-                } else if (__t === "mix") {
-                    return $12.call(this);
-                } else if (__t === "jsAttr") {
-                    return $12.call(this);
-                } else if (__t === "js") {
-                    return $12.call(this);
-                } else if (__t === "cls") {
-                    return $12.call(this);
                 } else {
-                    return $23.call(this);
+                    return $5.call(this);
                 }
-            } else if (__t === "js") {
-                var __t = this["_mode"];
-                if (__t === "attrs") {
-                    if (!this["ctx"]["url"] === false) {
-                        return {
-                            src: this["ctx"]["url"]
-                        };
-                        return;
-                    } else {
-                        return $12.call(this);
-                    }
-                } else if (__t === "tag") {
-                    return $27.call(this);
-                } else if (__t === "bem") {
-                    return $3.call(this);
-                } else if (__t === "default") {
-                    return $8.call(this);
-                } else if (__t === "content") {
-                    return $10.call(this);
-                } else if (__t === "mix") {
-                    return $12.call(this);
-                } else if (__t === "jsAttr") {
-                    return $12.call(this);
-                } else if (__t === "js") {
-                    return $12.call(this);
-                } else if (__t === "cls") {
-                    return $12.call(this);
-                } else {
-                    return $23.call(this);
-                }
-            } else if (__t === "css") {
-                if (!this["ctx"]["url"] === false) {
-                    var __t = this["_mode"];
-                    if (__t === "attrs") {
-                        return {
-                            rel: "stylesheet",
-                            href: this["ctx"]["url"]
-                        };
-                        return;
-                    } else if (__t === "tag") {
-                        return $2.call(this);
-                    } else if (__t === "bem") {
-                        return $3.call(this);
-                    } else if (__t === "default") {
-                        return $32.call(this);
-                    } else if (__t === "content") {
-                        return $10.call(this);
-                    } else if (__t === "mix") {
-                        return $12.call(this);
-                    } else if (__t === "jsAttr") {
-                        return $12.call(this);
-                    } else if (__t === "js") {
-                        return $12.call(this);
-                    } else if (__t === "cls") {
-                        return $12.call(this);
-                    } else {
-                        return $23.call(this);
-                    }
-                } else {
-                    var __t = this["_mode"];
-                    if (__t === "attrs") {
-                        return $12.call(this);
-                    } else if (__t === "tag") {
-                        return "style";
-                        return;
-                    } else if (__t === "bem") {
-                        return $3.call(this);
-                    } else if (__t === "default") {
-                        return $32.call(this);
-                    } else if (__t === "content") {
-                        return $10.call(this);
-                    } else if (__t === "mix") {
-                        return $12.call(this);
-                    } else if (__t === "jsAttr") {
-                        return $12.call(this);
-                    } else if (__t === "js") {
-                        return $12.call(this);
-                    } else if (__t === "cls") {
-                        return $12.call(this);
-                    } else {
-                        return $23.call(this);
-                    }
-                }
-            } else if (__t === "meta") {
-                var __t = this["_mode"];
-                if (__t === "attrs") {
-                    return this["ctx"]["attrs"];
-                    return;
-                } else if (__t === "tag") {
-                    return "meta";
-                    return;
-                } else if (__t === "bem") {
-                    return $3.call(this);
-                } else if (__t === "default") {
-                    return $8.call(this);
-                } else if (__t === "content") {
-                    return $10.call(this);
-                } else if (__t === "mix") {
-                    return $12.call(this);
-                } else if (__t === "jsAttr") {
-                    return $12.call(this);
-                } else if (__t === "js") {
-                    return $12.call(this);
-                } else if (__t === "cls") {
-                    return $12.call(this);
-                } else {
-                    return $23.call(this);
-                }
-            } else if (__t === "body") {
-                var __t = this["_mode"];
-                if (__t === "attrs") {
-                    return $12.call(this);
-                } else if (__t === "tag") {
-                    return "body";
-                    return;
-                } else if (__t === "bem") {
-                    return $12.call(this);
-                } else if (__t === "default") {
-                    return $8.call(this);
-                } else if (__t === "content") {
-                    return $10.call(this);
-                } else if (__t === "mix") {
-                    return $12.call(this);
-                } else if (__t === "jsAttr") {
-                    return $12.call(this);
-                } else if (__t === "js") {
-                    return $12.call(this);
-                } else if (__t === "cls") {
-                    return $12.call(this);
-                } else {
-                    return $23.call(this);
-                }
-            } else if (__t === "head") {
-                var __t = this["_mode"];
-                if (__t === "attrs") {
-                    return $12.call(this);
-                } else if (__t === "tag") {
-                    return "head";
-                    return;
-                } else if (__t === "bem") {
-                    return $3.call(this);
-                } else if (__t === "default") {
-                    return $8.call(this);
-                } else if (__t === "content") {
-                    return $10.call(this);
-                } else if (__t === "mix") {
-                    return $12.call(this);
-                } else if (__t === "jsAttr") {
-                    return $12.call(this);
-                } else if (__t === "js") {
-                    return $12.call(this);
-                } else if (__t === "cls") {
-                    return $12.call(this);
-                } else {
-                    return $23.call(this);
-                }
-            } else if (__t === "core") {
-                return $47.call(this);
-            } else {
-                return $47.call(this);
             }
-        } else if (__t === "i-jquery") {
-            var __t = this["elem"];
-            if (__t === "favicon") {
-                return $46.call(this);
-            } else if (__t === "js") {
-                return $46.call(this);
-            } else if (__t === "css") {
-                return $46.call(this);
-            } else if (__t === "meta") {
-                return $46.call(this);
-            } else if (__t === "body") {
-                return $46.call(this);
-            } else if (__t === "head") {
-                return $46.call(this);
-            } else if (__t === "core") {
+        } else {
+            if (!!this["_start"] === false) {
+                return $2.call(this);
+            } else {
+                return $5.call(this);
+            }
+        }
+    }
+    function $67() {
+        if (!!this["elem"] === false) {
+            var __t = this["block"];
+            if (__t === "b-gallery") {
                 var __t = this["_mode"];
-                if (__t === "attrs") {
-                    return $12.call(this);
-                } else if (__t === "tag") {
-                    return $12.call(this);
-                } else if (__t === "bem") {
-                    return $12.call(this);
-                } else if (__t === "default") {
-                    "";
-                    var __r35 = this["_mode"];
-                    this["_mode"] = "";
-                    var __r36 = this["ctx"];
-                    this["ctx"] = {
-                        block: "b-page",
-                        elem: "js",
-                        url: "//yandex.st/jquery/1.7.2/jquery.min.js"
+                if (__t === "js") {
+                    return {
+                        size: "30",
+                        rss: "/rss/rss.xml",
+                        gWidth: "800",
+                        gHeight: "520"
                     };
-                    this.apply();
-                    this["_mode"] = __r35;
-                    this["ctx"] = __r36;
-                    "";
                     return;
-                } else if (__t === "content") {
-                    return $10.call(this);
-                } else if (__t === "mix") {
-                    return $12.call(this);
-                } else if (__t === "jsAttr") {
-                    return $12.call(this);
-                } else if (__t === "js") {
-                    return $12.call(this);
-                } else if (__t === "cls") {
-                    return $12.call(this);
-                } else {
-                    return $23.call(this);
-                }
-            } else {
-                return $46.call(this);
-            }
-        } else if (__t === "i-ua") {
-            if (!!this["elem"] === false) {
-                var __t = this["_mode"];
-                if (__t === "attrs") {
-                    return $12.call(this);
+                } else if (__t === "attrs") {
+                    return $4.call(this);
                 } else if (__t === "tag") {
-                    return $27.call(this);
+                    return $4.call(this);
                 } else if (__t === "bem") {
-                    return $3.call(this);
+                    return $4.call(this);
                 } else if (__t === "default") {
-                    return $7.call(this);
+                    return $6.call(this);
+                } else if (__t === "content") {
+                    return $8.call(this);
+                } else if (__t === "mix") {
+                    return $4.call(this);
+                } else if (__t === "jsAttr") {
+                    return $4.call(this);
+                } else if (__t === "cls") {
+                    return $4.call(this);
+                } else {
+                    return $19.call(this);
+                }
+            } else if (__t === "b-page") {
+                var __t = this["elem"];
+                if (__t === "favicon") {
+                    var __t = this["_mode"];
+                    if (__t === "js") {
+                        return $4.call(this);
+                    } else if (__t === "attrs") {
+                        return $21.call(this);
+                    } else if (__t === "tag") {
+                        return $22.call(this);
+                    } else if (__t === "bem") {
+                        return $23.call(this);
+                    } else if (__t === "default") {
+                        return $24.call(this);
+                    } else if (__t === "content") {
+                        return $8.call(this);
+                    } else if (__t === "mix") {
+                        return $4.call(this);
+                    } else if (__t === "jsAttr") {
+                        return $4.call(this);
+                    } else if (__t === "cls") {
+                        return $4.call(this);
+                    } else {
+                        return $19.call(this);
+                    }
+                } else if (__t === "js") {
+                    var __t = this["_mode"];
+                    if (__t === "js") {
+                        return $4.call(this);
+                    } else if (__t === "attrs") {
+                        return $27.call(this);
+                    } else if (__t === "tag") {
+                        return $28.call(this);
+                    } else if (__t === "bem") {
+                        return $23.call(this);
+                    } else if (__t === "default") {
+                        return $24.call(this);
+                    } else if (__t === "content") {
+                        return $8.call(this);
+                    } else if (__t === "mix") {
+                        return $4.call(this);
+                    } else if (__t === "jsAttr") {
+                        return $4.call(this);
+                    } else if (__t === "cls") {
+                        return $4.call(this);
+                    } else {
+                        return $19.call(this);
+                    }
+                } else if (__t === "css") {
+                    if (!this["ctx"]["url"] === false) {
+                        var __t = this["_mode"];
+                        if (__t === "js") {
+                            return $4.call(this);
+                        } else if (__t === "attrs") {
+                            return $30.call(this);
+                        } else if (__t === "tag") {
+                            return $22.call(this);
+                        } else if (__t === "bem") {
+                            return $23.call(this);
+                        } else if (__t === "default") {
+                            return $33.call(this);
+                        } else if (__t === "content") {
+                            return $8.call(this);
+                        } else if (__t === "mix") {
+                            return $4.call(this);
+                        } else if (__t === "jsAttr") {
+                            return $4.call(this);
+                        } else if (__t === "cls") {
+                            return $4.call(this);
+                        } else {
+                            return $19.call(this);
+                        }
+                    } else {
+                        var __t = this["_mode"];
+                        if (__t === "js") {
+                            return $4.call(this);
+                        } else if (__t === "attrs") {
+                            return $4.call(this);
+                        } else if (__t === "tag") {
+                            return $35.call(this);
+                        } else if (__t === "bem") {
+                            return $23.call(this);
+                        } else if (__t === "default") {
+                            return $33.call(this);
+                        } else if (__t === "content") {
+                            return $8.call(this);
+                        } else if (__t === "mix") {
+                            return $4.call(this);
+                        } else if (__t === "jsAttr") {
+                            return $4.call(this);
+                        } else if (__t === "cls") {
+                            return $4.call(this);
+                        } else {
+                            return $19.call(this);
+                        }
+                    }
+                } else if (__t === "meta") {
+                    var __t = this["_mode"];
+                    if (__t === "js") {
+                        return $4.call(this);
+                    } else if (__t === "attrs") {
+                        return $38.call(this);
+                    } else if (__t === "tag") {
+                        return $39.call(this);
+                    } else if (__t === "bem") {
+                        return $23.call(this);
+                    } else if (__t === "default") {
+                        return $24.call(this);
+                    } else if (__t === "content") {
+                        return $8.call(this);
+                    } else if (__t === "mix") {
+                        return $4.call(this);
+                    } else if (__t === "jsAttr") {
+                        return $4.call(this);
+                    } else if (__t === "cls") {
+                        return $4.call(this);
+                    } else {
+                        return $19.call(this);
+                    }
+                } else if (__t === "body") {
+                    var __t = this["_mode"];
+                    if (__t === "js") {
+                        return $4.call(this);
+                    } else if (__t === "attrs") {
+                        return $4.call(this);
+                    } else if (__t === "tag") {
+                        return $41.call(this);
+                    } else if (__t === "bem") {
+                        return $4.call(this);
+                    } else if (__t === "default") {
+                        return $24.call(this);
+                    } else if (__t === "content") {
+                        return $8.call(this);
+                    } else if (__t === "mix") {
+                        return $4.call(this);
+                    } else if (__t === "jsAttr") {
+                        return $4.call(this);
+                    } else if (__t === "cls") {
+                        return $4.call(this);
+                    } else {
+                        return $19.call(this);
+                    }
+                } else if (__t === "head") {
+                    var __t = this["_mode"];
+                    if (__t === "js") {
+                        return $4.call(this);
+                    } else if (__t === "attrs") {
+                        return $4.call(this);
+                    } else if (__t === "tag") {
+                        return $43.call(this);
+                    } else if (__t === "bem") {
+                        return $23.call(this);
+                    } else if (__t === "default") {
+                        return $24.call(this);
+                    } else if (__t === "content") {
+                        return $8.call(this);
+                    } else if (__t === "mix") {
+                        return $4.call(this);
+                    } else if (__t === "jsAttr") {
+                        return $4.call(this);
+                    } else if (__t === "cls") {
+                        return $4.call(this);
+                    } else {
+                        return $19.call(this);
+                    }
+                } else if (__t === "core") {
+                    return $45.call(this);
+                } else {
+                    return $45.call(this);
+                }
+            } else if (__t === "i-jquery") {
+                return $51.call(this);
+            } else if (__t === "i-ua") {
+                var __t = this["_mode"];
+                if (__t === "js") {
+                    return $4.call(this);
+                } else if (__t === "attrs") {
+                    return $4.call(this);
+                } else if (__t === "tag") {
+                    return $28.call(this);
+                } else if (__t === "bem") {
+                    return $23.call(this);
+                } else if (__t === "default") {
+                    return $6.call(this);
                 } else if (__t === "content") {
                     return [ ";(function(d,e,c,r){", "e=d.documentElement;", 'c="className";', 'r="replace";', 'e[c]=e[c][r]("i-ua_js_no","i-ua_js_yes");', 'if(d.compatMode!="CSS1Compat")', 'e[c]=e[c][r]("i-ua_css_standart","i-ua_css_quirks")', "})(document);" ].join("");
                     return;
                 } else if (__t === "mix") {
-                    return $12.call(this);
+                    return $4.call(this);
                 } else if (__t === "jsAttr") {
-                    return $12.call(this);
-                } else if (__t === "js") {
-                    return $12.call(this);
+                    return $4.call(this);
                 } else if (__t === "cls") {
-                    return $12.call(this);
+                    return $4.call(this);
                 } else {
-                    return $23.call(this);
+                    return $19.call(this);
                 }
             } else {
-                return $46.call(this);
+                return $48.call(this);
             }
         } else {
-            return $46.call(this);
+            var __t = this["block"];
+            if (__t === "b-gallery") {
+                return $48.call(this);
+            } else if (__t === "b-page") {
+                var __t = this["elem"];
+                if (__t === "favicon") {
+                    var __t = this["_mode"];
+                    if (__t === "js") {
+                        return $4.call(this);
+                    } else if (__t === "attrs") {
+                        return $21.call(this);
+                    } else if (__t === "tag") {
+                        return $22.call(this);
+                    } else if (__t === "bem") {
+                        return $23.call(this);
+                    } else if (__t === "default") {
+                        return $6.call(this);
+                    } else if (__t === "content") {
+                        return $8.call(this);
+                    } else if (__t === "mix") {
+                        return $4.call(this);
+                    } else if (__t === "jsAttr") {
+                        return $4.call(this);
+                    } else if (__t === "cls") {
+                        return $4.call(this);
+                    } else {
+                        return $19.call(this);
+                    }
+                } else if (__t === "js") {
+                    var __t = this["_mode"];
+                    if (__t === "js") {
+                        return $4.call(this);
+                    } else if (__t === "attrs") {
+                        return $27.call(this);
+                    } else if (__t === "tag") {
+                        return $28.call(this);
+                    } else if (__t === "bem") {
+                        return $23.call(this);
+                    } else if (__t === "default") {
+                        return $6.call(this);
+                    } else if (__t === "content") {
+                        return $8.call(this);
+                    } else if (__t === "mix") {
+                        return $4.call(this);
+                    } else if (__t === "jsAttr") {
+                        return $4.call(this);
+                    } else if (__t === "cls") {
+                        return $4.call(this);
+                    } else {
+                        return $19.call(this);
+                    }
+                } else if (__t === "css") {
+                    if (!this["ctx"]["url"] === false) {
+                        var __t = this["_mode"];
+                        if (__t === "js") {
+                            return $4.call(this);
+                        } else if (__t === "attrs") {
+                            return $30.call(this);
+                        } else if (__t === "tag") {
+                            return $22.call(this);
+                        } else if (__t === "bem") {
+                            return $23.call(this);
+                        } else if (__t === "default") {
+                            return $58.call(this);
+                        } else if (__t === "content") {
+                            return $8.call(this);
+                        } else if (__t === "mix") {
+                            return $4.call(this);
+                        } else if (__t === "jsAttr") {
+                            return $4.call(this);
+                        } else if (__t === "cls") {
+                            return $4.call(this);
+                        } else {
+                            return $19.call(this);
+                        }
+                    } else {
+                        var __t = this["_mode"];
+                        if (__t === "js") {
+                            return $4.call(this);
+                        } else if (__t === "attrs") {
+                            return $4.call(this);
+                        } else if (__t === "tag") {
+                            return $35.call(this);
+                        } else if (__t === "bem") {
+                            return $23.call(this);
+                        } else if (__t === "default") {
+                            return $58.call(this);
+                        } else if (__t === "content") {
+                            return $8.call(this);
+                        } else if (__t === "mix") {
+                            return $4.call(this);
+                        } else if (__t === "jsAttr") {
+                            return $4.call(this);
+                        } else if (__t === "cls") {
+                            return $4.call(this);
+                        } else {
+                            return $19.call(this);
+                        }
+                    }
+                } else if (__t === "meta") {
+                    var __t = this["_mode"];
+                    if (__t === "js") {
+                        return $4.call(this);
+                    } else if (__t === "attrs") {
+                        return $38.call(this);
+                    } else if (__t === "tag") {
+                        return $39.call(this);
+                    } else if (__t === "bem") {
+                        return $23.call(this);
+                    } else if (__t === "default") {
+                        return $6.call(this);
+                    } else if (__t === "content") {
+                        return $8.call(this);
+                    } else if (__t === "mix") {
+                        return $4.call(this);
+                    } else if (__t === "jsAttr") {
+                        return $4.call(this);
+                    } else if (__t === "cls") {
+                        return $4.call(this);
+                    } else {
+                        return $19.call(this);
+                    }
+                } else if (__t === "body") {
+                    var __t = this["_mode"];
+                    if (__t === "js") {
+                        return $4.call(this);
+                    } else if (__t === "attrs") {
+                        return $4.call(this);
+                    } else if (__t === "tag") {
+                        return $41.call(this);
+                    } else if (__t === "bem") {
+                        return $4.call(this);
+                    } else if (__t === "default") {
+                        return $6.call(this);
+                    } else if (__t === "content") {
+                        return $8.call(this);
+                    } else if (__t === "mix") {
+                        return $4.call(this);
+                    } else if (__t === "jsAttr") {
+                        return $4.call(this);
+                    } else if (__t === "cls") {
+                        return $4.call(this);
+                    } else {
+                        return $19.call(this);
+                    }
+                } else if (__t === "head") {
+                    var __t = this["_mode"];
+                    if (__t === "js") {
+                        return $4.call(this);
+                    } else if (__t === "attrs") {
+                        return $4.call(this);
+                    } else if (__t === "tag") {
+                        return $43.call(this);
+                    } else if (__t === "bem") {
+                        return $23.call(this);
+                    } else if (__t === "default") {
+                        return $6.call(this);
+                    } else if (__t === "content") {
+                        return $8.call(this);
+                    } else if (__t === "mix") {
+                        return $4.call(this);
+                    } else if (__t === "jsAttr") {
+                        return $4.call(this);
+                    } else if (__t === "cls") {
+                        return $4.call(this);
+                    } else {
+                        return $19.call(this);
+                    }
+                } else if (__t === "core") {
+                    return $48.call(this);
+                } else {
+                    return $48.call(this);
+                }
+            } else if (__t === "i-jquery") {
+                return $51.call(this);
+            } else if (__t === "i-ua") {
+                return $48.call(this);
+            } else {
+                return $48.call(this);
+            }
         }
     }
     function $e() {
