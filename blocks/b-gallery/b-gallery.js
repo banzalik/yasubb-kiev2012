@@ -55,7 +55,7 @@ BEM.DOM.decl('b-gallery', {
     getDefaultParams : function() {
 
         return {
-            size: '30',             // сколько фотографий показыать
+            size: '30',             // сколько фотографий показывать
             rss: '/rss/rss.xml',    // путь к RSS потоку
             gWidth: '800',          // ширина слайдера
             gHeight: '520'          // высота слайдера
