@@ -9,7 +9,7 @@ BEM.DOM.decl('b-gallery', {
                 rss = this.params.rss, // откуда брать поток
                 gWidth = this.params.gWidth, // ширина галереи
                 gHeight = this.params.gHeight, // высота галереи
-                html = '<div class="fotorama" data-width="'+gWidth+'" data-height="'+gHeight+'">';
+                html = '<div class="fotorama b-fotorama">';
 
             // инициализация  media rss
             $.xmlns["media"] = "http://search.yahoo.com/mrss";
@@ -37,9 +37,11 @@ BEM.DOM.decl('b-gallery', {
 
                 $('.b-gallery').html(html);
 
-                $('.fotorama').fotorama({
+                $('.b-fotorama').fotorama({
                     width: gWidth,
-                    height: gHeight
+                    height: gHeight,
+                    caption: 'simple',
+                    loop: true
                 });
 
             }, "xml");
