@@ -21,12 +21,14 @@ BEM.DOM.decl('b-gallery', {
 
                     if (index < countPhotos) {
 
-                        var raw = $(this).find("media|thumbnail").attr('url'),
-                            title = $(this).find('title').text();
+                        var raw = $(this).find("media|thumbnail").attr('url').substr(5,999), // обрезаем http:, для того, что бы работало c htpps
+                            link = $(this).find('link').text(),
+                            author = $(this).find('author').text(),
+                            alt = "Автор на Яндекс.Фотках: <a href="+link+" class=b-author target=_blank>"+author+"</a>"; // формируем ссылку на автора фотки
 
                         if ( raw && ( raw.indexOf('null') < 0 ) ) {
                             raw = raw.substr(0,(raw.length-1));
-                            html += '<a href="'+raw+'XL"><img src="'+raw+'XS" alt="'+title+'" /></a>';
+                            html += '<a href="'+raw+'XL"><img src="'+raw+'XS" alt="'+alt+'" /></a>';
                         }
 
                     }

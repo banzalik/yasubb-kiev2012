@@ -79,9 +79,16 @@ exports.deps = [
         "elem": "xmlns"
     },
     {
+        "block": "b-page",
+        "elem": "body"
+    },
+    {
         "block": "b-page"
     },
     {
         "block": "b-gallery"
+    },
+    {
+        "block": "b-author"
     }
 ];

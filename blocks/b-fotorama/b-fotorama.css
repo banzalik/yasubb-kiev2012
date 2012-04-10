@@ -1,5 +1,5 @@
 /* Fotorama 2.0.2 (v1321) | http://fotoramajs.com/license.txt */
-.fotorama-outer, .fotorama__caption-outer { margin: 0; padding: 0; }
+.fotorama-outer, .fotorama__caption-outer { margin: 0; padding: 0; position: absolute; top: -1.3em; left: 0; }
 
 .fotorama { -webkit-tap-highlight-color: rgba(0, 0, 0, 0); *zoom: 1; position: relative; margin: 0; padding: 0; }
 .fotorama img { max-width: none !important; min-width: 0 !important; width: auto; }
@@ -129,7 +129,7 @@
 .fotorama_vertical .fotorama__wrap_mouseout .fotorama__arr_prev { margin-top: -44px; }
 .fotorama_vertical .fotorama__wrap_mouseout .fotorama__arr_next { margin-bottom: -44px; }
 
-.fotorama__caption { font-size: 13px; line-height: 16px; margin: 0.5em 0; white-space: normal; position: relative; }
+.fotorama__caption { font-size: 13px; line-height: 16px; margin:0; white-space: normal; position: relative; }
 
 .fotorama__caption_overlay, .fotorama_fullscreen .fotorama__caption { background-color: #181717; background-color: rgba(24, 23, 23, 0.75); color: white; z-index: 15; margin: 0; position: absolute; left: 0; bottom: 0; padding: 5px 10px; }
 

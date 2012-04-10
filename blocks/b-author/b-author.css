@@ -1,0 +1,13 @@
+a.b-author:link,
+a.b-author:visited,
+a.b-author:hover,
+a.b-author:active,
+a.b-author:focus{
+    font-weight: bold;
+    color: black;
+}
+a.b-author:hover,
+a.b-author:focus,
+a.b-author:first-letter {
+    color: red;
+}
