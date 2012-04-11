@@ -3651,9 +3651,7 @@ BEM.DOM.decl('b-gallery', {
 
                 $('.b-social__like').html(data);
 
-                VK.Widgets.Like('vk_like',{ pageUrl: _this.params.links[modVal], pageImage: "http:"+_this.params.thumbs[modVal] });
-
-                console.log('thumbs', _this.params.thumbs[modVal]);
+                VK.Widgets.Like('vk_like',{ pageUrl: _this.params.links[modVal], pageImage: "http:"+_this.params.thumbs[modVal], type: "button", pageDescription: 'Очень красивая фотография на Яндекс.Фотках' });
 
             });
 
