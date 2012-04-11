@@ -1,4 +1,5 @@
 @import url(../../blocks/b-fotorama/b-fotorama.css);
+@import url(../../blocks-mr/b-fotorama/b-fotorama.css);
 @import url(../../blocks/b-page/__body/b-page__body.css);
 @import url(../../blocks/b-gallery/b-gallery.css);
 @import url(../../blocks/b-author/b-author.css);

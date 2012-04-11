@@ -3068,6 +3068,14 @@ $(function() {
 });
 /* ../../bem-bl/blocks-common/i-bem/__dom/_init/i-bem__dom_init_auto.js: end */ /**/
 
+/* ../../blocks-mr/b-social/__js/b-social__js.js: begin */ /**/
+mailru.loader.require('api', function() {
+    mailru.app.init('fad28d0fbfe141b09626dcfd74fafd67');
+    // все готово, здесь можно работать с функциями API
+    //mailru.app.utils.setTitle('Фото дня на Яндекс.Фотках');
+});
+/* ../../blocks-mr/b-social/__js/b-social__js.js: end */ /**/
+
 /* ../../blocks/b-fotorama/b-fotorama.js: begin */ /**/
 /*! Fotorama 2.0.2 (v1321) | http://fotoramajs.com/license.txt */
 (function(e){function oa(b){for(var a={},e=0;e<Y.length;e++){var A=Y[e][0],o=Y[e][1];if(b){var k=b.attr("data-"+A);k&&("number"==o?(k=Number(k),isNaN(k)||(a[A]=k)):"boolean"==o?"true"==k?a[A]=!0:"false"==k&&(a[A]=!1):"string"==o?a[A]=k:"boolean-number"==o&&("true"==k?a[A]=!0:"false"==k?a[A]=!1:(k=Number(k),isNaN(k)||(a[A]=k))))}else a[A]=Y[e][2]}return a}function pa(b,a){for(var e={},o=0;o<Da.length;o++)e[Da[o]+b]=a;return e}function qa(b,a){if(ra)return pa("transform",a?"translate(0,"+b+"px)":"translate("+

@@ -644,7 +644,7 @@
 }
 
 .fotorama__wrap_mouseover .fotorama__arr:hover,
-.fotorama__wrap_mouseover .fotorama__arr_hover {
+.fotorama__wrap_mouseover fotorama__arr {
     opacity: 1;
     text-shadow: black 0 0 5px, black 0 0 25px;
 }
