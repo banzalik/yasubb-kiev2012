@@ -50,6 +50,7 @@ BEM_CREATE=$(BEM) create block \
 .PRECIOUS: %.js
 %.js: %.deps.js
 	$(call BEM_BUILD,js,$(word 2,$(subst -, ,$(firstword $(firstword $(subst /, ,$(dir $@)))))))
+	uglifyjs -nc -o $(@D)/_$(*F).js $(@D)/$(*F).js
 
 
 DO_GIT=@echo -- git $1 $2; \

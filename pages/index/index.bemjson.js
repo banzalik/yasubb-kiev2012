@@ -5,7 +5,7 @@
         { elem: 'css', url: '_index.css'},
         { block: 'i-jquery', elem: 'core' },
         { block: 'b-social', elem: 'js' },
-        { elem: 'js', url: 'index.js' }
+        { elem: 'js', url: '_index.js' }
     ],
     content: [{
         block: 'b-gallery',
