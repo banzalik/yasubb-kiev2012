@@ -3576,7 +3576,7 @@ BEM.DOM.decl('b-gallery', {
                         var raw = $(this).find("media|thumbnail").attr('url').substr(5,999), // обрезаем http:, для того, что бы работало c htpps
                             link = $(this).find('link').text(),
                             author = $(this).find('author').text(),
-                            alt = "Автор на Яндекс.Фотках: <a href="+link+" class=b-author target=_blank>"+author+"</a>",// формируем ссылку на автора фотки
+                            alt = "Автор фото на Яндекс.Фотках: <a href="+link+" class=b-author target=_blank>"+author+"</a>",// формируем ссылку на автора фотки
                             photo= {};
 
                             photo.caption = alt;

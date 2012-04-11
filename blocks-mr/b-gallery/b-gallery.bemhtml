@@ -1,0 +1,6 @@
+block b-gallery {
+    js: {
+        gWidth: '760',
+        gHeight: '520'
+    }
+}
