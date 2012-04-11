@@ -21,7 +21,7 @@ BEM_CREATE=$(BEM) create block \
 		--force \
 		$(*F)
 
-%.html: %.bemhtml.js %.css %.js %.ie.css %.bemhtml.js
+%.html: %.bemhtml.js %.css %.js %.bemhtml.js
 	$(call BEM_CREATE,bem-bl/blocks-common/i-bem/bem/techs/html.js,$(firstword $(subst /, ,$(dir $@))))
 
 .PRECIOUS: %.bemhtml.js

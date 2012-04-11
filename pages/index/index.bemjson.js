@@ -3,8 +3,8 @@
     title: 'Фото дня на Яндекс.Фотках',
     head: [
         { elem: 'css', url: 'index.css'},
-        { elem: 'css', url: 'index.ie.css', ie: 'lt IE 8' },
         { block: 'i-jquery', elem: 'core' },
+        { block: 'b-social', elem: 'js' },
         { elem: 'js', url: 'index.js' }
     ],
     content: [{
