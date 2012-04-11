@@ -3,12 +3,12 @@
 }
 
 .fotorama__arr {
-    color: #ffffff;
+    color: #c5d700;
 }
 
 .fotorama__wrap_mouseover .fotorama__arr:hover,
 .fotorama__wrap_mouseover .fotorama__arr_hover {
-    color: #f7f7f7;
+    color: #42a000;
     text-shadow: gray 0 0 5px, gray 0 0 25px;
 }
 
@@ -17,6 +17,5 @@
 }
 
 .fotorama__thumbs_previews .fotorama__thumb-border {
-    border-color: #45678f;
-    background: rgba(175, 175, 175, 0.15);
+    border-color: #c5d700;
 }
