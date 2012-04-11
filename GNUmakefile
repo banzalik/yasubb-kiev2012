@@ -1,6 +1,9 @@
 all:: bem-bl
 all:: $(patsubst %.bemjson.js,%.html,$(wildcard pages/*/*.bemjson.js))
 all:: $(patsubst %.bemjson.js,%.html,$(wildcard pages-*/*/*.bemjson.js))
+fb:: $(patsubst %.bemjson.js,%.html,$(wildcard pages-fb/*/*.bemjson.js))
+vk:: $(patsubst %.bemjson.js,%.html,$(wildcard pages-vk/*/*.bemjson.js))
+mr:: $(patsubst %.bemjson.js,%.html,$(wildcard pages-mr/*/*.bemjson.js))
 
 BEM=bem
 
