@@ -4,6 +4,6 @@ block b-social {
         elem: 'js'
       },{
         elem: 'like',
-        content: 'like'
+        content: ''
     }]
 }

@@ -9,8 +9,17 @@ BEM.DOM.decl('b-gallery', {
             _this.afterCurrentEvent(function(){
                 var modVal = _this.getMod('image');
 
-                console.log('modVal', modVal );
-                console.log('url', _this.params.links[modVal]);
+                var data='<div class="fb-like" data-href="'+_this.params.links[modVal]+'" data-send="false" data-width="450" data-show-faces="false"></div>';
+
+                $('.b-social__like').html(data);
+
+                FB.init({
+                    appId      : '307637845974060',
+                    status     : true,
+                    cookie     : true,
+                    xfbml      : true,
+                    oauth      : true
+                });
 
             });
 

@@ -3559,7 +3559,8 @@ BEM.DOM.decl('b-gallery', {
                 gWidth = _this.params.gWidth, // ширина галереи
                 gHeight = _this.params.gHeight, // высота галереи
                 photos = [],
-                links = [];
+                links = [],
+                thumbs = [];
 
 
             // загрука и парсинг данных
@@ -3589,6 +3590,7 @@ BEM.DOM.decl('b-gallery', {
 
                             photos.push(photo);
                             links.push(link);
+                            thumbs.push(photo.thumb);
                         }
 
                     }
@@ -3597,6 +3599,7 @@ BEM.DOM.decl('b-gallery', {
 
                 _this.params.photos = photos;
                 _this.params.links = links;
+                _this.params.thumbs = thumbs;
 
                 $('.b-gallery').html('<div class="fotorama b-fotorama"></div>');
 
@@ -3644,8 +3647,17 @@ BEM.DOM.decl('b-gallery', {
             _this.afterCurrentEvent(function(){
                 var modVal = _this.getMod('image');
 
-                console.log('modVal', modVal );
-                console.log('url', _this.params.links[modVal]);
+                var data='<div class="fb-like" data-href="'+_this.params.links[modVal]+'" data-send="false" data-width="450" data-show-faces="false"></div>';
+
+                $('.b-social__like').html(data);
+
+                FB.init({
+                    appId      : '307637845974060',
+                    status     : true,
+                    cookie     : true,
+                    xfbml      : true,
+                    oauth      : true
+                });
 
             });
 

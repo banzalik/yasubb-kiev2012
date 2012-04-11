@@ -4,10 +4,10 @@ block b-social, elem js, default: {
         this.ctx = [{
             block: 'b-page',
             elem: 'js',
-            url: '//connect.facebook.net/en_US/all.js'
+            url: '//vkontakte.ru/js/api/openapi.js'
         },{
             tag: '',
-            content: '<div id="fb-root"></div>'
+            content: '<script>VK.init({apiId: 2900887,onlyWidgets: true});</script>'
         }]
     ) this.apply()
 

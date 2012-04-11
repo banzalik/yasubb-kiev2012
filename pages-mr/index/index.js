@@ -3559,7 +3559,8 @@ BEM.DOM.decl('b-gallery', {
                 gWidth = _this.params.gWidth, // ширина галереи
                 gHeight = _this.params.gHeight, // высота галереи
                 photos = [],
-                links = [];
+                links = [],
+                thumbs = [];
 
 
             // загрука и парсинг данных
@@ -3589,6 +3590,7 @@ BEM.DOM.decl('b-gallery', {
 
                             photos.push(photo);
                             links.push(link);
+                            thumbs.push(photo.thumb);
                         }
 
                     }
@@ -3597,6 +3599,7 @@ BEM.DOM.decl('b-gallery', {
 
                 _this.params.photos = photos;
                 _this.params.links = links;
+                _this.params.thumbs = thumbs;
 
                 $('.b-gallery').html('<div class="fotorama b-fotorama"></div>');
 

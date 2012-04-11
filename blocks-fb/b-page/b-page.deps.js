@@ -2,7 +2,7 @@
     mustDeps:[
         {
             block:'b-social',
-            elem:'like'
+            elem:'js'
         }
     ],
     shouldDeps:[
