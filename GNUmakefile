@@ -37,10 +37,14 @@ BEM_CREATE=$(BEM) create block \
 .PRECIOUS: %.ie.css
 %.ie.css: %.deps.js
 	$(call BEM_BUILD,ie.css,$(word 2,$(subst -, ,$(firstword $(firstword $(subst /, ,$(dir $@)))))))
+	borschik -t css -i $(@D)/$(*F).css -o $(@D)/_$(*F).css
+	csso -i $(@D)/_$(*F).css -o $(@D)/_$(*F).css
 
 .PRECIOUS: %.css
 %.css: %.deps.js
 	$(call BEM_BUILD,css,$(word 2,$(subst -, ,$(firstword $(firstword $(subst /, ,$(dir $@)))))))
+	borschik -t css -i $(@D)/$(*F).css -o $(@D)/_$(*F).css
+	csso -i $(@D)/_$(*F).css -o $(@D)/_$(*F).css
 
 
 .PRECIOUS: %.js

@@ -2,7 +2,7 @@
     block: 'b-page',
     title: 'Фото дня на Яндекс.Фотках',
     head: [
-        { elem: 'css', url: 'index.css'},
+        { elem: 'css', url: '_index.css'},
         { block: 'i-jquery', elem: 'core' },
         { block: 'b-social', elem: 'js' },
         { elem: 'js', url: 'index.js' }
