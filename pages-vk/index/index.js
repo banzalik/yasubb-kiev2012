@@ -3068,6 +3068,10 @@ $(function() {
 });
 /* ../../bem-bl/blocks-common/i-bem/__dom/_init/i-bem__dom_init_auto.js: end */ /**/
 
+/* ../../blocks-vk/b-social/__js/b-social__js.js: begin */ /**/
+VK.init({apiId: 2900887,onlyWidgets: true});
+/* ../../blocks-vk/b-social/__js/b-social__js.js: end */ /**/
+
 /* ../../blocks/b-fotorama/b-fotorama.js: begin */ /**/
 /*! Fotorama 2.0.2 (v1321) | http://fotoramajs.com/license.txt */
 (function(e){function oa(b){for(var a={},e=0;e<Y.length;e++){var A=Y[e][0],o=Y[e][1];if(b){var k=b.attr("data-"+A);k&&("number"==o?(k=Number(k),isNaN(k)||(a[A]=k)):"boolean"==o?"true"==k?a[A]=!0:"false"==k&&(a[A]=!1):"string"==o?a[A]=k:"boolean-number"==o&&("true"==k?a[A]=!0:"false"==k?a[A]=!1:(k=Number(k),isNaN(k)||(a[A]=k))))}else a[A]=Y[e][2]}return a}function pa(b,a){for(var e={},o=0;o<Da.length;o++)e[Da[o]+b]=a;return e}function qa(b,a){if(ra)return pa("transform",a?"translate(0,"+b+"px)":"translate("+
@@ -3651,7 +3655,7 @@ BEM.DOM.decl('b-gallery', {
 
                 $('.b-social__like').html(data);
 
-                VK.Widgets.Like('vk_like',{ pageUrl: _this.params.links[modVal], pageImage: "http:"+_this.params.thumbs[modVal], type: "button", pageDescription: 'Очень красивая фотография на Яндекс.Фотках' });
+                VK.Widgets.Like('vk_like',{ pageUrl: _this.params.links[modVal], pageImage: "http:"+_this.params.thumbs[modVal], type: "mini", pageDescription: 'Очень красивая фотография на Яндекс.Фотках' });
 
             });
 

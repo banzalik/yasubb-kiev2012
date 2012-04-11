@@ -9,17 +9,11 @@ BEM.DOM.decl('b-gallery', {
             _this.afterCurrentEvent(function(){
                 var modVal = _this.getMod('image');
 
-                var data='<div class="fb-like" data-href="'+_this.params.links[modVal]+'" data-send="false" data-width="450" data-show-faces="false"></div>';
+                var data =  '<a class="b-social__share" target="_blank" href="https://www.facebook.com/sharer.php?u=' +
+                            encodeURI(_this.params.links[modVal])+
+                            '&t='+encodeURI('Красивое фото дня на Яндекс.Фотках')+'">Поделиться</a>';
 
                 $('.b-social__like').html(data);
-
-                FB.init({
-                    appId      : '307637845974060',
-                    status     : true,
-                    cookie     : true,
-                    xfbml      : true,
-                    oauth      : true
-                });
 
             });
 

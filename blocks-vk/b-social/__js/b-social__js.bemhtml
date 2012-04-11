@@ -5,9 +5,6 @@ block b-social, elem js, default: {
             block: 'b-page',
             elem: 'js',
             url: '//vkontakte.ru/js/api/openapi.js'
-        },{
-            tag: '',
-            content: '<script>VK.init({apiId: 2900887,onlyWidgets: true});</script>'
         }]
     ) this.apply()
 

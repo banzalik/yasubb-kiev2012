@@ -1,8 +1,6 @@
 block b-social {
     tag: 'div',
     content: [{
-        elem: 'js'
-      },{
         elem: 'like',
         content: ''
     }]

@@ -6,6 +6,10 @@
             mods:{'init':'auto'}
         },
         {
+            block: 'b-social',
+            elem: 'js'
+        },
+        {
             block:'b-fotorama'
         }, // подключаем fotarama.js
         {

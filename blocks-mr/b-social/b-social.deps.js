@@ -6,5 +6,9 @@
         }
     ],
     shouldDeps:[
+        {
+            block: 'b-social',
+            elem:  'share'
+        }
     ]
 })

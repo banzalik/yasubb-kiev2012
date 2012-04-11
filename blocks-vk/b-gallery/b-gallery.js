@@ -13,7 +13,7 @@ BEM.DOM.decl('b-gallery', {
 
                 $('.b-social__like').html(data);
 
-                VK.Widgets.Like('vk_like',{ pageUrl: _this.params.links[modVal], pageImage: "http:"+_this.params.thumbs[modVal], type: "button", pageDescription: 'Очень красивая фотография на Яндекс.Фотках' });
+                VK.Widgets.Like('vk_like',{ pageUrl: _this.params.links[modVal], pageImage: "http:"+_this.params.thumbs[modVal], type: "mini", pageDescription: 'Очень красивая фотография на Яндекс.Фотках' });
 
             });
 
