@@ -1,0 +1,14 @@
+block b-social, elem js, default: {
+    local(
+        this._mode = '',
+        this.ctx = [{
+            block: 'b-page',
+            elem: 'js',
+            url: '//cdn.connect.mail.ru/js/loader.js'
+        },{
+            tag: '',
+            content: ''
+        }]
+    ) this.apply()
+
+}

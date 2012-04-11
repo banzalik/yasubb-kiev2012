@@ -3635,3 +3635,31 @@ BEM.DOM.decl('b-gallery', {
 
 /* ../../blocks/b-gallery/b-gallery.js: end */ /**/
 
+/* ../../blocks-mr/b-gallery/b-gallery.js: begin */ /**/
+BEM.DOM.decl('b-gallery', {
+
+    onSetMod : {
+
+        'image' : function() {
+
+            var _this = this;
+
+            _this.afterCurrentEvent(function(){
+                var modVal = _this.getMod('image');
+
+                var data='<a class="mrc__plugin_like_button" href="http://connect.mail.ru/share?url='+encodeURI(_this.params.links[modVal])+'&amp;title='+encodeURI('Фото дня на Яндекс.Фотках')+'&amp;description='+encodeURI('Очень красивая фото на Яндекс.Фотках')+'"><img src="mailru-share.png" ></a>';
+
+                $('.b-social__like').html(data);
+
+                //VK.Widgets.Like('vk_like',{ pageUrl: _this.params.links[modVal], pageImage: "http:"+_this.params.thumbs[modVal], type: "button", pageDescription: 'Очень красивая фотография на Яндекс.Фотках' });
+
+            });
+
+
+        }
+    }
+
+});
+
+/* ../../blocks-mr/b-gallery/b-gallery.js: end */ /**/
+

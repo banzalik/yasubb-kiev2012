@@ -1,0 +1,10 @@
+({
+    mustDeps:[
+        {
+            block:'b-social',
+            elem:'js'
+        }
+    ],
+    shouldDeps:[
+    ]
+})
