@@ -7,9 +7,9 @@
 ##Мимикрия
 Приложение имеет 4 состояния:
 
- * [pages/index/index.html](https://github.com/banzalik/yasubb-kiev2012/tree/master/pages/index/index.html) - состояние ядра, доступна ббазовая функциональность просмотра фото ;
- * [pages-fb/index/index.html](https://github.com/banzalik/yasubb-kiev2012/tree/master/pages/index/index.html) - состояние мимикрии под Facebook, отличается от ядра внешним видом, содержит в себе дополнительную функциональность - возможность "шарить" понравивщуюся фотографию друзьям ;
- * [pages-vk/index/index.html](https://github.com/banzalik/yasubb-kiev2012/tree/master/pages/index/index.html) - состояние мимикрии под Vkontakte, отличается от ядра внешним видом, осноной фон приложения сделан серым цветом, содержит в себе дополнительную функциональность - возможность "лайкнуть" понравивщуюся фотографию друзьям, использует для этого JS API Vkontakte;
+ * [pages/index/index.html](https://github.com/banzalik/yasubb-kiev2012/tree/master/pages/index/index.html) - состояние ядра, доступна базовая функциональность просмотра фото ;
+ * [pages-fb/index/index.html](https://github.com/banzalik/yasubb-kiev2012/tree/master/pages/index/index.html) - состояние мимикрии под Facebook, отличается от ядра внешним видом, содержит в себе дополнительную функциональность - возможность "шарить" понравившуюся фотографию друзьям ;
+ * [pages-vk/index/index.html](https://github.com/banzalik/yasubb-kiev2012/tree/master/pages/index/index.html) - состояние мимикрии под Vkontakte, отличается от ядра внешним видом, основной фон приложения сделан серым цветом, содержит в себе дополнительную функциональность - возможность "лайкнуть" понравивщуюся фотографию друзьям, использует для этого JS API Vkontakte;
  * [pages-mr/index/index.html](https://github.com/banzalik/yasubb-kiev2012/tree/master/pages/index/index.html) - состояние мимикрии под Мой Мир, отличается от ядра внешним видом, содержит в себе дополнительную функциональность - возможность "показать" понравивщуюся фотографию друзьям, для кнопки-лайка используется CDN Mail.ru.
 
 ##Структура проекта
@@ -20,9 +20,9 @@
 
   * [bem-bl](https://github.com/bem/bem-bl) - библиотека блоков от Яндекса;
   * [blocks](https://github.com/banzalik/yasubb-kiev2012/tree/master/blocks/) - базовый уровень переопределения, его достаточно для сборки ядра;
-  * [blocks-fb](https://github.com/banzalik/yasubb-kiev2012/tree/master/blocks-fb/) - уровень переопределения для Facebook, в нем переопределяется и доопределеяется поведение приложения в Facebook;
-  * [blocks-vk](https://github.com/banzalik/yasubb-kiev2012/tree/master/blocks-vk/) - уровень переопределения для Vkontakte, в нем переопределяется и доопределеяется поведение приложения во Vkontakte, инициализируется и используется API Vkontakte;
-  * [blocks-mr](https://github.com/banzalik/yasubb-kiev2012/tree/master/blocks-mr/) - уровень переопределения для Vkontakte, в нем переопределяется и доопределеяется поведение приложения в Моём Мире, инициализируется и используется API Maii.ru;
+  * [blocks-fb](https://github.com/banzalik/yasubb-kiev2012/tree/master/blocks-fb/) - уровень переопределения для Facebook, в нем переопределяется и доопределяется поведение приложения в Facebook;
+  * [blocks-vk](https://github.com/banzalik/yasubb-kiev2012/tree/master/blocks-vk/) - уровень переопределения для Vkontakte, в нем переопределяется и доопределяется поведение приложения во Vkontakte, инициализируется и используется API Vkontakte;
+  * [blocks-mr](https://github.com/banzalik/yasubb-kiev2012/tree/master/blocks-mr/) - уровень переопределения для Vkontakte, в нем переопределяется и доопределяется поведение приложения в Моём Мире, инициализируется и используется API Maii.ru;
 
 ###Сборка файлов
 
@@ -49,6 +49,6 @@
  * [bem-tools](https://github.com/bem/bem-tools) - инструменты для работы с файлами, написанными по [БЭМ-методу](http://bem.github.com/bem-method/pages/beginning/beginning.en.html);
  * [bem-bl](https://github.com/bem/bem-bl) - библиотека блоков от Яндекса;
  * [Fotorama](http://fotoramajs.com/) - javascript галерея, на базе которой построено приложение;
- * [CSSO](http://github.com/afelix/csso) - CSS оптимизатор и минификатор;
+ * [CSSO](http://github.com/afelix/csso) - CSS оптимизатор и минимизатор;
  * [borschik](http://github.com/veged/borschik) - сборщик CSS и JS файлов в один;
- * [UglifyJS](http://github.com/mishoo/UglifyJS) - минификатор JS.
+ * [UglifyJS](http://github.com/mishoo/UglifyJS) - минимизатор JS.
