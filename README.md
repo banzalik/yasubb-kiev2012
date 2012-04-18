@@ -52,3 +52,9 @@
  * [CSSO](http://github.com/afelix/csso) - CSS оптимизатор и минимизатор;
  * [borschik](http://github.com/veged/borschik) - сборщик CSS и JS файлов в один;
  * [UglifyJS](http://github.com/mishoo/UglifyJS) - минимизатор JS.
+
+##Лицензия
+
+Весь код проекта, за исключением [Fotorama](http://fotoramajs.com/), распроостраняется по BSD лицензии.
+
+Обратите внимание, что у скрипта [Fotorama](http://fotoramajs.com/) есть своя лицензия, разрешающая использовать fotorama.js на личных сайтах. Иное использование, в т. ч. на любых других сайтах (корпоративных, коммерческих, политических, религиозных и др.) возможно только с согласия [автора](mailto:fotoramajs@gmail.com).
