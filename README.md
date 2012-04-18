@@ -7,10 +7,10 @@
 ##Мимикрия
 Приложение имеет 4 состояния:
 
- * [pages/index/index.html](/tree/master/pages/index/index.html) - состояние ядра, доступна ббазовая функциональность просмотра фото ;
- * [pages-fb/index/index.html](/tree/master/pages/index/index.html) - состояние мимикрии под Facebook, отличается от ядра внешним видом, содержит в себе дополнительную функциональность - возможность "шарить" понравивщуюся фотографию друзьям ;
- * [pages-vk/index/index.html](/tree/master/pages/index/index.html) - состояние мимикрии под Vkontakte, отличается от ядра внешним видом, осноной фон приложения сделан серым цветом, содержит в себе дополнительную функциональность - возможность "лайкнуть" понравивщуюся фотографию друзьям, использует для этого JS API Vkontakte;
- * [pages-mr/index/index.html](/tree/master/pages/index/index.html) - состояние мимикрии под Мой Мир, отличается от ядра внешним видом, содержит в себе дополнительную функциональность - возможность "показать" понравивщуюся фотографию друзьям, для кнопки-лайка используется CDN Mail.ru.
+ * [pages/index/index.html](https://github.com/banzalik/yasubb-kiev2012/tree/master/pages/index/index.html) - состояние ядра, доступна ббазовая функциональность просмотра фото ;
+ * [pages-fb/index/index.html](https://github.com/banzalik/yasubb-kiev2012/tree/master/pages/index/index.html) - состояние мимикрии под Facebook, отличается от ядра внешним видом, содержит в себе дополнительную функциональность - возможность "шарить" понравивщуюся фотографию друзьям ;
+ * [pages-vk/index/index.html](https://github.com/banzalik/yasubb-kiev2012/tree/master/pages/index/index.html) - состояние мимикрии под Vkontakte, отличается от ядра внешним видом, осноной фон приложения сделан серым цветом, содержит в себе дополнительную функциональность - возможность "лайкнуть" понравивщуюся фотографию друзьям, использует для этого JS API Vkontakte;
+ * [pages-mr/index/index.html](https://github.com/banzalik/yasubb-kiev2012/tree/master/pages/index/index.html) - состояние мимикрии под Мой Мир, отличается от ядра внешним видом, содержит в себе дополнительную функциональность - возможность "показать" понравивщуюся фотографию друзьям, для кнопки-лайка используется CDN Mail.ru.
 
 ##Структура проекта
 
@@ -19,10 +19,10 @@
 На проекте используется 5 уровней переопределения - их можно считать исходным кодом:
 
   * [bem-bl](https://github.com/bem/bem-bl) - библиотека блоков от Яндекса;
-  * [blocks](/tree/master/blocks/) - базовый уровень переопределения, его достаточно для сборки ядра;
-  * [blocks-fb](/tree/master/blocks-fb/) - уровень переопределения для Facebook, в нем переопределяется и доопределеяется поведение приложения в Facebook;
-  * [blocks-vk](/tree/master/blocks-vk/) - уровень переопределения для Vkontakte, в нем переопределяется и доопределеяется поведение приложения во Vkontakte, инициализируется и используется API Vkontakte;
-  * [blocks-mr](/tree/master/blocks-mr/) - уровень переопределения для Vkontakte, в нем переопределяется и доопределеяется поведение приложения в Моём Мире, инициализируется и используется API Maii.ru;
+  * [blocks](https://github.com/banzalik/yasubb-kiev2012/tree/master/blocks/) - базовый уровень переопределения, его достаточно для сборки ядра;
+  * [blocks-fb](https://github.com/banzalik/yasubb-kiev2012/tree/master/blocks-fb/) - уровень переопределения для Facebook, в нем переопределяется и доопределеяется поведение приложения в Facebook;
+  * [blocks-vk](https://github.com/banzalik/yasubb-kiev2012/tree/master/blocks-vk/) - уровень переопределения для Vkontakte, в нем переопределяется и доопределеяется поведение приложения во Vkontakte, инициализируется и используется API Vkontakte;
+  * [blocks-mr](https://github.com/banzalik/yasubb-kiev2012/tree/master/blocks-mr/) - уровень переопределения для Vkontakte, в нем переопределяется и доопределеяется поведение приложения в Моём Мире, инициализируется и используется API Maii.ru;
 
 ###Сборка файлов
 
