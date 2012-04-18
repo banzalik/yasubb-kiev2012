@@ -48,6 +48,7 @@
 
  * [bem-tools](https://github.com/bem/bem-tools) - инструменты для работы с файлами, написанными по [БЭМ-методу](http://bem.github.com/bem-method/pages/beginning/beginning.en.html);
  * [bem-bl](https://github.com/bem/bem-bl) - библиотека блоков от Яндекса;
+ * [jQuery](http://jQuery.com/) - в представлении не нуждается;
  * [Fotorama](http://fotoramajs.com/) - javascript галерея, на базе которой построено приложение;
  * [CSSO](http://github.com/afelix/csso) - CSS оптимизатор и минимизатор;
  * [borschik](http://github.com/veged/borschik) - сборщик CSS и JS файлов в один;
@@ -55,6 +56,6 @@
 
 ##Лицензия
 
-Весь код проекта, за исключением [Fotorama.js](http://fotoramajs.com/), распроостраняется по BSD лицензии.
+Весь код проекта, за исключением [Fotorama.js](http://fotoramajs.com/), распространяется по BSD лицензии.
 
 Обратите внимание, что у скрипта [Fotorama.js](http://fotoramajs.com/) есть своя лицензия, разрешающая использовать [Fotorama.js](http://fotoramajs.com/) на личных сайтах. Иное использование, в том числе на любых других сайтах (корпоративных, коммерческих, политических, религиозных и др.) возможно только с согласия [Артёма Поликарпова](mailto:fotoramajs@gmail.com).
