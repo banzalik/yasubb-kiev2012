@@ -59,3 +59,7 @@
 Весь код проекта, за исключением [Fotorama.js](http://fotoramajs.com/), распространяется по BSD лицензии.
 
 Обратите внимание, что у скрипта [Fotorama.js](http://fotoramajs.com/) есть своя лицензия, разрешающая использовать [Fotorama.js](http://fotoramajs.com/) на личных сайтах. Иное использование, в том числе на любых других сайтах (корпоративных, коммерческих, политических, религиозных и др.) возможно только с согласия [Артёма Поликарпова](mailto:fotoramajs@gmail.com).
+
+<!-- Yandex.Metrika counter -->
+<img src="//mc.yandex.ru/watch/14260738" style="position:absolute; left:-9999px;" alt="" />
+<!-- /Yandex.Metrika counter -->
