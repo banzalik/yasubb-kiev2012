@@ -506,6 +506,26 @@ function modFnsToProps(modFns, props, elemName) {
 
 }
 
+function buildCheckMod(modName, modVal) {
+
+    return modVal?
+        Array.isArray(modVal)?
+            function(block) {
+                var i = 0, len = modVal.length;
+                while(i < len)
+                    if(block.hasMod(modName, modVal[i++]))
+                        return true;
+                return false;
+            } :
+            function(block) {
+                return block.hasMod(modName, modVal);
+            } :
+        function(block) {
+            return block.hasMod(modName);
+        };
+
+}
+
 /** @namespace */
 this.BEM = $.inherit($.observable, /** @lends BEM.prototype */ {
 
@@ -734,16 +754,16 @@ this.BEM = $.inherit($.observable, /** @lends BEM.prototype */ {
             if(this._processingMods[modId]) return _this;
 
             var elemName,
-                currentModVal = elem?
+                curModVal = elem?
                     _this._getElemMod(modName, elem, elemName = _this.__self._extractElemNameFrom(elem)) :
                     _this.getMod(modName);
 
-            if(currentModVal === modVal) return _this;
+            if(curModVal === modVal) return _this;
 
             this._processingMods[modId] = true;
 
             var needSetMod = true,
-                modFnParams = [modName, modVal, currentModVal];
+                modFnParams = [modName, modVal, curModVal];
 
             elem && modFnParams.unshift(elem);
 
@@ -753,7 +773,7 @@ this.BEM = $.inherit($.observable, /** @lends BEM.prototype */ {
 
             !elem && needSetMod && (_this._modCache[modName] = modVal);
 
-            needSetMod && _this._afterSetMod(modName, modVal, elem, elemName);
+            needSetMod && _this._afterSetMod(modName, modVal, curModVal, elem, elemName);
 
             delete this._processingMods[modId];
         }
@@ -767,9 +787,11 @@ this.BEM = $.inherit($.observable, /** @lends BEM.prototype */ {
      * @protected
      * @param {String} modName имя модификатора
      * @param {String} modVal значение модификатора
+     * @param {String} oldModVal старое значение модификатора
      * @param {Object} [elem] вложенный элемент
+     * @param {String} [elemName] имя элемента
      */
-    _afterSetMod : function(modName, modVal, elem) {},
+    _afterSetMod : function(modName, modVal, oldModVal, elem, elemName) {},
 
     /**
      * Устанавливает модификатор у блока/вложенного элемента в зависимости от условия.
@@ -965,11 +987,12 @@ this.BEM = $.inherit($.observable, /** @lends BEM.prototype */ {
         var baseBlock = blocks[decl.baseBlock || decl.block] || this;
 
         if(decl.modName) {
+            var checkMod = buildCheckMod(decl.modName, decl.modVal);
             $.each(props, function(name, prop) {
                 $.isFunction(prop) &&
                     (props[name] = function() {
                         var method;
-                        if(this.hasMod(decl.modName, decl.modVal)) {
+                        if(checkMod(this)) {
                             method = prop;
                         } else {
                             var baseMethod = baseBlock.prototype[name];
@@ -1530,8 +1553,10 @@ function init(domElem, uniqInitId) {
         processParams(params, domNode, blockName, uniqInitId);
         var block = uniqIdToBlock[params.uniqId];
         if(block) {
-            block.domElem = block.domElem.add(domElem);
-            $.extend(block.params, params);
+            if(block.domElem.index(domNode) < 0) {
+                block.domElem = block.domElem.add(domElem);
+                $.extend(block.params, params);
+            }
         } else {
             initBlock(blockName, domElem, params);
         }
@@ -2162,10 +2187,11 @@ var DOM = BEM.DOM = BEM.decl('i-bem__dom',/** @lends BEM.DOM.prototype */{
      * @private
      * @param {String} modName имя модификатора
      * @param {String} modVal значение модификатора
-     * @param {jQuery} [elem] DOM-элемент
+     * @param {String} oldModVal старое значение модификатора
+     * @param {jQuery} [elem] элемент
      * @param {String} [elemName] имя элемента
      */
-    _afterSetMod : function(modName, modVal, elem, elemName) {
+    _afterSetMod : function(modName, modVal, oldModVal, elem, elemName) {
 
         var _self = this.__self,
             classPrefix = _self._buildModClassPrefix(modName, elemName),
@@ -2180,7 +2206,10 @@ var DOM = BEM.DOM = BEM.decl('i-bem__dom',/** @lends BEM.DOM.prototype */{
                     (needDel? '' : '$1' + classPrefix + modVal) + '$3') :
                 needDel || $(this).addClass(classPrefix + modVal);
         });
-        elemName && this.dropElemCache(elemName, modName, modVal);
+
+        elemName && this
+            .dropElemCache(elemName, modName, oldModVal)
+            .dropElemCache(elemName, modName, modVal);
 
     },
 
@@ -2726,14 +2755,16 @@ var DOM = BEM.DOM = BEM.decl('i-bem__dom',/** @lends BEM.DOM.prototype */{
      * Хелпер для live-инициализации по инициализации другого блока
      * @static
      * @private
+     * @param {String} event имя события
      * @param {String} blockName имя блока, на инициализацию которого нужно реагировать
      * @param {Function} callback обработчик, вызываемый после успешной инициализации в контексте нового блока
      * @param {String} findFnName имя метода для поиска
      */
-    _liveInitOnBlockInit : function(blockName, callback, findFnName) {
+    _liveInitOnBlockEvent : function(event, blockName, callback, findFnName) {
 
         var name = this._name;
-        blocks[blockName].on('init', function(e) {
+
+        blocks[blockName].on(event, function(e) {
             var blocks = e.block[findFnName](name);
             callback && blocks.forEach(function(block) {
                 callback.call(block);
@@ -2744,7 +2775,36 @@ var DOM = BEM.DOM = BEM.decl('i-bem__dom',/** @lends BEM.DOM.prototype */{
     },
 
     /**
+     * Хелпер для live-инициализации по событию другого блока на DOM-элементе текущего
+     * @static
+     * @protected
+     * @param {String} event имя события
+     * @param {String} blockName имя блока, на инициализацию которого нужно реагировать
+     * @param {Function} callback обработчик, вызываемый после успешной инициализации в контексте нового блока
+     */
+    liveInitOnBlockEvent : function(event, blockName, callback) {
+
+        return this._liveInitOnBlockEvent(event, blockName, callback, 'findBlocksOn');
+
+    },
+
+    /**
+     * Хелпер для live-инициализации по событию другого блока внутри текущего
+     * @static
+     * @protected
+     * @param {String} event имя события
+     * @param {String} blockName имя блока, на инициализацию которого нужно реагировать
+     * @param {Function} [callback] обработчик, вызываемый после успешной инициализации в контексте нового блока
+     */
+    liveInitOnBlockInsideEvent : function(event, blockName, callback) {
+
+        return this._liveInitOnBlockEvent(event, blockName, callback, 'findBlocksOutside');
+
+    },
+
+    /**
      * Хелпер для live-инициализации по инициализации другого блока на DOM-элементе текущего
+     * @deprecated использовать liveInitOnBlockEvent
      * @static
      * @protected
      * @param {String} blockName имя блока, на инициализацию которого нужно реагировать
@@ -2752,12 +2812,13 @@ var DOM = BEM.DOM = BEM.decl('i-bem__dom',/** @lends BEM.DOM.prototype */{
      */
     liveInitOnBlockInit : function(blockName, callback) {
 
-        return this._liveInitOnBlockInit(blockName, callback, 'findBlocksOn');
+        return this.liveInitOnBlockEvent('init', blockName, callback);
 
     },
 
     /**
      * Хелпер для live-инициализации по инициализации другого блока внутри текущего
+     * @deprecated использовать liveInitOnBlockInsideEvent
      * @static
      * @protected
      * @param {String} blockName имя блока, на инициализацию которого нужно реагировать
@@ -2765,7 +2826,7 @@ var DOM = BEM.DOM = BEM.decl('i-bem__dom',/** @lends BEM.DOM.prototype */{
      */
     liveInitOnBlockInsideInit : function(blockName, callback) {
 
-        return this._liveInitOnBlockInit(blockName, callback, 'findBlocksOutside');
+        return this.liveInitOnBlockInsideEvent('init', blockName, callback);
 
     },
 
